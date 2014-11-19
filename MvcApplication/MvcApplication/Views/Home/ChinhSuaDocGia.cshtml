@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Chỉnh sửa độc giả";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1><span style="color:#a9a9a9;"><samp><span style="background-color:lightgray;"><span style="font-size:48px;"><b>THƯ VIỆN ĐIỆN TỬ</b></span></span></samp></span></h1>
+                <h4><span style="color:#a9a9a9;">@ViewBag.Message</span></h4>
+                <h1>  </h1>
+            </hgroup>            
+        </div>
+    </section>
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("TimDocGia","Home",FormMethod.Post)) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Tìm độc giả</legend>       
+                 <label>Tìm theo:</label>
+                 <div>
+                     @Html.DropDownList("Tim", new SelectList(
+                         new List<Object>{ 
+                             new { value = 0 , text = "Mã độc giả"  },
+                             new { value = 1 , text = "Tên độc giả" },
+                             },
+                         "value",
+                         "text",
+                         0), new { style = "width: 250px;" })                     
+                 </div> <br />
+
+        <table>
+            <tr>
+                <td>
+                    <label>
+                        Từ khóa:
+                    </label>
+                    <div>
+                        @Html.TextBox("TuKhoa","", new { style = "width: 250px;" })                      
+                    </div>
+                </td>
+                    
+                <td>
+                     <div> <br />
+                        <input type="submit" value="Tìm kiếm" style="width: 100px" />
+                    </div>                 
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Quay lại trang chủ", "Index")
+</div>

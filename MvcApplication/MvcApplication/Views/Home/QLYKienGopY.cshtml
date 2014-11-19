@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MvcApplication.Models.YKienDocGia>
+
+@{
+    ViewBag.Title = "Quản lý ý kiến của đọc giả";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1><span style="color:#a9a9a9;"><samp><span style="background-color:lightgray;"><span style="font-size:48px;"><b>THƯ VIỆN ĐIỆN TỬ</b></span></span></samp></span></h1>
+                <h4><span style="color:#a9a9a9;">@ViewBag.Message</span></h4>
+                <h1>  </h1>
+            </hgroup>            
+        </div>
+    </section>
+}
+
+<h2>Quản lý ý kiến của đọc giả</h2><br />
+
+
+<table style="border-collapse:collapse" cellpadding="7px" border="1">
+    <tr style="text-align:center">
+        <th>         
+            Tiêu đề
+        </th>
+        <th>
+            Nội dung
+        </th>
+        <th>Thao tác</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TieuDe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoiDung)
+        </td>
+        <td>
+            @Html.ActionLink("Xóa", "remove", new { id = item.ID }, new { onclick="return confirm('Are you sure ?')" })
+        </td>
+    </tr>
+}
+
+</table>

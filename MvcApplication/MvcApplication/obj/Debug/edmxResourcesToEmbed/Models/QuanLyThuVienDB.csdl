@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLyThuVienModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="QuanLyThuVienEntities3" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Barcode_Of_Reader_Card" EntityType="QuanLyThuVienModel.Barcode_Of_Reader_Card" />
+    <EntitySet Name="DocGias" EntityType="QuanLyThuVienModel.DocGia" />
+    <EntitySet Name="Saches" EntityType="QuanLyThuVienModel.Sach" />
+    <EntitySet Name="ThongTinMuonSaches" EntityType="QuanLyThuVienModel.ThongTinMuonSach" />
+    <EntitySet Name="YKienDocGias" EntityType="QuanLyThuVienModel.YKienDocGia" />
+    <AssociationSet Name="fk_Barcode_Of_Reader_Card_DocGia" Association="QuanLyThuVienModel.fk_Barcode_Of_Reader_Card_DocGia">
+      <End Role="DocGia" EntitySet="DocGias" />
+      <End Role="Barcode_Of_Reader_Card" EntitySet="Barcode_Of_Reader_Card" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ThongTinMuonSach_DocGia" Association="QuanLyThuVienModel.fk_ThongTinMuonSach_DocGia">
+      <End Role="DocGia" EntitySet="DocGias" />
+      <End Role="ThongTinMuonSach" EntitySet="ThongTinMuonSaches" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ThongTinMuonSach_Sach" Association="QuanLyThuVienModel.fk_ThongTinMuonSach_Sach">
+      <End Role="Sach" EntitySet="Saches" />
+      <End Role="ThongTinMuonSach" EntitySet="ThongTinMuonSaches" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Barcode_Of_Reader_Card">
+    <Key>
+      <PropertyRef Name="MaDocGia" />
+    </Key>
+    <Property Name="MaDocGia" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="true" />
+    <Property Name="BarcodeName" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="true" />
+    <Property Name="BarcodePath" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="DocGia" Relationship="QuanLyThuVienModel.fk_Barcode_Of_Reader_Card_DocGia" FromRole="Barcode_Of_Reader_Card" ToRole="DocGia" />
+  </EntityType>
+  <EntityType Name="DocGia">
+    <Key>
+      <PropertyRef Name="MaSoDocGia" />
+    </Key>
+    <Property Name="MaSoDocGia" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="true" />
+    <Property Name="HoTen" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="GioiTinh" Type="String" MaxLength="3" Unicode="true" FixedLength="false" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="DiaChi" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="DienThoai" Type="String" MaxLength="13" Unicode="false" FixedLength="true" />
+    <Property Name="TinhTP" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="QuocGia" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="KhoaLopDonVi" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Nhom" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="NgayTheHetHan" Type="DateTime" Precision="0" />
+    <Property Name="TrangThaiThe" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="CMND" Type="String" MaxLength="13" Unicode="false" FixedLength="true" />
+    <Property Name="SoMaVach" Type="String" MaxLength="13" Unicode="false" FixedLength="true" />
+    <Property Name="MaSoThe" Type="String" MaxLength="13" Unicode="false" FixedLength="true" />
+    <Property Name="TenDangNhap" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="GhiChu" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Barcode_Of_Reader_Card" Relationship="QuanLyThuVienModel.fk_Barcode_Of_Reader_Card_DocGia" FromRole="DocGia" ToRole="Barcode_Of_Reader_Card" />
+    <NavigationProperty Name="ThongTinMuonSaches" Relationship="QuanLyThuVienModel.fk_ThongTinMuonSach_DocGia" FromRole="DocGia" ToRole="ThongTinMuonSach" />
+  </EntityType>
+  <EntityType Name="Sach">
+    <Key>
+      <PropertyRef Name="SoDangKyCaBiet" />
+    </Key>
+    <Property Name="SoDangKyCaBiet" Type="Int32" Nullable="false" />
+    <Property Name="NhanDe" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="NhaXuatBan" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TacGia" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Gia" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="ThongTinMuonSaches" Relationship="QuanLyThuVienModel.fk_ThongTinMuonSach_Sach" FromRole="Sach" ToRole="ThongTinMuonSach" />
+  </EntityType>
+  <EntityType Name="ThongTinMuonSach">
+    <Key>
+      <PropertyRef Name="MaDocGia" />
+      <PropertyRef Name="SoDangKyCaBiet" />
+    </Key>
+    <Property Name="MaDocGia" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="true" />
+    <Property Name="SoDangKyCaBiet" Type="Int32" Nullable="false" />
+    <Property Name="NgayMuon" Type="DateTime" Precision="0" />
+    <Property Name="NgayTra" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="DocGia" Relationship="QuanLyThuVienModel.fk_ThongTinMuonSach_DocGia" FromRole="ThongTinMuonSach" ToRole="DocGia" />
+    <NavigationProperty Name="Sach" Relationship="QuanLyThuVienModel.fk_ThongTinMuonSach_Sach" FromRole="ThongTinMuonSach" ToRole="Sach" />
+  </EntityType>
+  <EntityType Name="YKienDocGia">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TieuDe" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="NoiDung" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <Association Name="fk_Barcode_Of_Reader_Card_DocGia">
+    <End Role="DocGia" Type="QuanLyThuVienModel.DocGia" Multiplicity="1" />
+    <End Role="Barcode_Of_Reader_Card" Type="QuanLyThuVienModel.Barcode_Of_Reader_Card" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DocGia">
+        <PropertyRef Name="MaSoDocGia" />
+      </Principal>
+      <Dependent Role="Barcode_Of_Reader_Card">
+        <PropertyRef Name="MaDocGia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ThongTinMuonSach_DocGia">
+    <End Role="DocGia" Type="QuanLyThuVienModel.DocGia" Multiplicity="1" />
+    <End Role="ThongTinMuonSach" Type="QuanLyThuVienModel.ThongTinMuonSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocGia">
+        <PropertyRef Name="MaSoDocGia" />
+      </Principal>
+      <Dependent Role="ThongTinMuonSach">
+        <PropertyRef Name="MaDocGia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ThongTinMuonSach_Sach">
+    <End Role="Sach" Type="QuanLyThuVienModel.Sach" Multiplicity="1" />
+    <End Role="ThongTinMuonSach" Type="QuanLyThuVienModel.ThongTinMuonSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sach">
+        <PropertyRef Name="SoDangKyCaBiet" />
+      </Principal>
+      <Dependent Role="ThongTinMuonSach">
+        <PropertyRef Name="SoDangKyCaBiet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

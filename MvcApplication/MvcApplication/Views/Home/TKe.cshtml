@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MvcApplication.Models.ThongTinMuonSach>
+
+@{
+    ViewBag.Title = "TKe";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1><span style="color:#a9a9a9;"><samp><span style="background-color:lightgray;"><span style="font-size:48px;"><b>THƯ VIỆN ĐIỆN TỬ</b></span></span></samp></span></h1>
+                <h4><span style="color:#a9a9a9;">@ViewBag.Message</span></h4>
+                <h1>  </h1>
+            </hgroup>            
+        </div>
+    </section>
+}
+
+<h2>Những đọc giả mượn sách quá hạn</h2><hr><br />
+
+
+<table style="border-collapse:collapse" border="1">
+    <tr style="text-align:center">
+        <th>
+            Mã đọc giả
+        </th>
+        <th>
+            Số đăng ký cá biệt
+        </th>
+        <th>
+            Ngày mượn
+        </th>
+        <th>
+            Ngày trả
+        </th>
+        <th>Thao tác</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaDocGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoDangKyCaBiet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayMuon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayTra)
+        </td>
+        <td>
+            @Html.ActionLink("Xóa", "removeDGMuonSachQuaHan", new { id= int.Parse(item.MaDocGia)  }, new { onclick=("return confirm('Are you sure?')") })
+        </td>
+    </tr>
+}
+
+</table>

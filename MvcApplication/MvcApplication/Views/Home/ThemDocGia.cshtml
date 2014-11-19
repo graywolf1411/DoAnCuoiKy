@@ -1,0 +1,279 @@
+﻿@model MvcApplication.Models.DocGia
+
+@{
+    ViewBag.Title = "Thêm mới độc giả";
+    
+    <link rel="stylesheet" href="~/Content/jquery-ui.css">
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $("#datepicker").datepicker();
+        });
+        $(function () {
+            $("#datepicker1").datepicker();
+        });
+    </script>
+
+    <style type="text/css">.padl{padding-right:50px} </style>
+  
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1><span style="color:#a9a9a9;"><samp><span style="background-color:lightgray;"><span style="font-size:48px;"><b>THƯ VIỆN ĐIỆN TỬ</b></span></span></samp></span></h1>
+                <h4><span style="color:#a9a9a9;">@ViewBag.Message</span></h4>
+                <h1>  </h1>
+            </hgroup>            
+        </div>
+    </section>
+}
+
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Save","Home",FormMethod.Post)) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Độc giả</legend>
+        <table>
+            <tr>
+                <td class="padl">
+                    <div>Họ và tên:</div> 
+                     <div>
+                        @Html.TextBoxFor(model => model.HoTen, new { style = "width: 250px;" })<font size="1" color="red">*</font>
+                        @Html.ValidationMessageFor(model => model.HoTen)
+                    </div>
+                </td>
+                
+                <td>
+                    <div>
+                        Giới tính:
+                    </div>
+                    <div>
+                        @Html.DropDownListFor(model => model.GioiTinh, new SelectList(
+                            new List<Object>{ 
+                                new { value = "Nam" , text = "Nam"  },
+                                new { value = "Nữ" , text = "Nữ" },
+                                },
+                            "value",
+                            "text",
+                            0), new { style = "width: 173px;" })
+                        @Html.ValidationMessageFor(model => model.GioiTinh)
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td class="padl">
+                    <div>
+                        Địa chỉ:
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.DiaChi, new { style = "width: 250px;" })<font size="1" color="red">*</font>
+                        @Html.ValidationMessageFor(model => model.DiaChi)
+                    </div>
+                </td>
+                    
+                <td>
+                    <div>
+                        Ngày sinh:
+                       </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.NgaySinh, new { id="datepicker" })<font size="1" color="red">*</font>
+                        @Html.ValidationMessageFor(model => model.NgaySinh)
+                    </div>                  
+                </td>
+            </tr>
+        </table>
+
+
+
+        <div>
+            Điện thoại:
+        </div>
+        <div>
+            @Html.EditorFor(model => model.DienThoai)<font size="1" color="red">*</font>
+            @Html.ValidationMessageFor(model => model.DienThoai)
+        </div>
+
+        <div>
+            Tỉnh/thành phố:
+        </div>
+        <div>
+            @Html.EditorFor(model => model.TinhTP)<font size="1" color="red">*</font>
+            @Html.ValidationMessageFor(model => model.TinhTP)
+        </div>
+
+        <div>
+            Quốc gia:
+        </div>
+        <div>
+            @Html.EditorFor(model => model.QuocGia)<font size="1" color="red">*</font>
+            @Html.ValidationMessageFor(model => model.QuocGia)
+        </div>
+
+        <table>
+            <tr>
+                <td class="padl">
+                    <div>
+                        Khoa/Lớp/Đơn vị:
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.KhoaLopDonVi, new { style = "width: 250px;" })<font size="1" color="red">*</font>
+                        @Html.ValidationMessageFor(model => model.KhoaLopDonVi)
+                    </div>
+                </td>
+                    
+                <td>
+                    <div>
+                        Nhóm: 
+                    </div>
+                    <div>
+                        @Html.DropDownListFor(model => model.Nhom, new SelectList(
+                            new List<Object>{ 
+                                new { value = "Sinh viên" , text = "Sinh viên"  },
+                                new { value = "Giảng viên" , text = "Giảng viên" },
+                                new { value = "Khác" , text = "Khác" },
+                                },
+                            "value",
+                            "text",
+                            0), new { style = "width: 173px;"})
+                        @Html.ValidationMessageFor(model => model.Nhom)
+                    </div>                
+                </td>
+            </tr>
+        </table>
+
+        
+        <table>
+            <tr>
+                <td class="padl">
+                    <div>
+                        Email:
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.Email, new { style = "width: 250px;"})<font size="1" color="red">*</font>
+                        @Html.ValidationMessageFor(model => model.Email)
+                    </div>
+                </td>
+                    
+                <td>
+                    <div>
+                        Trạng thái thẻ:
+                    </div>
+                    <div>
+                        @Html.DropDownListFor(model => model.TrangThaiThe, new SelectList(
+                            new List<Object>{ 
+                                new { value = "Được mượn" , text = "Được mượn"  },
+                                new { value = "Bị cấm" , text = "Bị cấm" },
+                                new { value = "Đã hủy" , text = "Đã hủy" },
+                                },
+                            "value",
+                            "text",
+                            0), new { style = "width: 173px;"})
+                        @Html.ValidationMessageFor(model => model.TrangThaiThe)
+                    </div>               
+                </td>
+            </tr>
+        </table>
+        
+         <table>
+            <tr>
+                <td class="padl">
+                    <div>
+                        CMND:
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.CMND, new { style = "width: 250px;"})<font size="1" color="red">*</font>
+                        @Html.ValidationMessageFor(model => model.CMND)
+                    </div> 
+                    
+                </td>
+                    
+                <td>
+                    <div>
+                        Ngày thẻ hết hạn:
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.NgayTheHetHan, new { id="datepicker1" })<font size="1" color="red">*</font>
+                        @Html.ValidationMessageFor(model => model.NgayTheHetHan)
+                    </div>            
+                </td>
+            </tr>
+        </table>
+     
+        <table>
+            <tr>
+                <td class="padl">
+                    <div>
+                        Số mã vạch:
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.SoMaVach, new { style = "width: 250px;"})<font size="1" color="red">*</font>
+                        @Html.ValidationMessageFor(model => model.SoMaVach)
+                    </div>
+                </td>
+                    
+                <td>
+                    <div>
+                        Tên đăng nhập:
+                    </div>
+                    <div>
+                        @Html.EditorFor(model => model.TenDangNhap)
+                        @Html.ValidationMessageFor(model => model.TenDangNhap)
+                    </div>             
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td class="padl">
+                    <div>
+                        Mã số thẻ:
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.MaSoThe, new { style = "width: 250px;"})<font size="1" color="red">*</font>
+                        @Html.ValidationMessageFor(model => model.MaSoThe)
+                    </div>
+                </td>
+                    
+                <td>
+                    <div>
+                        Mật khẩu:
+                    </div>
+                    <div>
+                        @Html.PasswordFor(model => model.MatKhau)
+                        @Html.ValidationMessageFor(model => model.MatKhau)
+                    </div>             
+                </td>
+            </tr>
+        </table>
+
+        <div>
+            Ghi chú:
+        </div>
+        <div>
+            @Html.TextAreaFor(model => model.GhiChu, new { @cols = 70, @rows = 10 })
+            @Html.ValidationMessageFor(model => model.GhiChu)
+        </div>
+
+        <p>
+            <input type="submit" value="Thêm mới" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Quay lại trang chủ", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

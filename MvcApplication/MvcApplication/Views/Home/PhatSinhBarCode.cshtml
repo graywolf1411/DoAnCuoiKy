@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "PhatSinhBarCode";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1><span style="color:#a9a9a9;"><samp><span style="background-color:lightgray;"><span style="font-size:48px;"><b>THƯ VIỆN ĐIỆN TỬ</b></span></span></samp></span></h1>
+                <h4><span style="color:#a9a9a9;">@ViewBag.Message</span></h4>
+                <h1>  </h1>
+            </hgroup>            
+        </div>
+    </section>
+}
+
+<h2>Phát sinh barcode</h2>
+
+@using (Html.BeginForm("GenerateBarcode", "Home", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Barcode</legend>
+        <p>
+            Nhập mã độc giả để phát sinh Barcode<br>
+        </p>        
+        <label>Mã độc giả: </label>
+        <div>
+            @Html.TextBox("MaDocGia")
+        </div>
+        <p>
+            <input type="submit" value="Tạo Barcode" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Quay lại trang chủ", "Index")
+</div>
