@@ -1,1 +1,0 @@
-Thay / Cac ban doi duong dan den co so du lieu trong tap tin 'web.config'
