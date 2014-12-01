@@ -1,0 +1,6 @@
+Thay/ co doi duong dan den CSDL trong web.config
+
+Dang nhap tai khoan Admin voi
+
+Uername: Admin
+Password: Admin

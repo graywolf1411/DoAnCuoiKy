@@ -1,0 +1,113 @@
+﻿@model IEnumerable<BackEnd.Models.DocGia>
+
+@{
+    ViewBag.Title = "Chỉnh sửa độc giả";
+}
+
+
+<h2>@ViewBag.Title</h2> <br />
+
+@using (Html.BeginForm("TimDocGia","QuanLyDocGia",FormMethod.Post)) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>      
+                 <label>Tìm theo:</label>
+                 <div>
+                     @Html.DropDownList("Tim", new SelectList(
+                         new List<Object>{ 
+                             new { value = 0 , text = "Mã độc giả"  },
+                             new { value = 1 , text = "Tên độc giả" },
+                             },
+                         "value",
+                         "text",
+                         0), new { style = "width: 250px;" })                     
+                 </div> <br />
+
+        <table>
+            <tr>
+                <td>
+                    <label>
+                        Từ khóa:
+                    </label>
+                    <div>
+                        @Html.TextBox("TuKhoa","", new { style = "width: 250px;" })                      
+                    </div>
+                </td>
+                    
+                <td>
+                     <div> <br />
+                        <input type="submit" value="Tìm kiếm" style="width: 100px" />
+                    </div>                 
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+}
+<br /><br />
+<table style="border:1px solid black; border-collapse:collapse;">
+    <tr>
+        <th style="border:1px solid black">
+            Mã số độc giả
+        </th>
+        <th style="border:1px solid black">
+            Họ và tên
+        </th>
+        <th style="border:1px solid black">
+            Giới tính
+        </th>
+        <th style="border:1px solid black">
+            Ngày sinh
+        </th>
+        <th style="border:1px solid black">
+            Địa chỉ
+        </th>
+        <th style="border:1px solid black">
+            Số điện thoại
+        </th>     
+        <th style="border:1px solid black">
+            Ngày thẻ hết hạn
+        </th>
+        <th style="border:1px solid black">
+            Trạng thái thẻ
+        </th >
+        <th style="border:1px solid black">Chỉnh sửa</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.MaSoDocGia)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.HoTen)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.GioiTinh)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.NgaySinh)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.DienThoai)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.NgayTheHetHan)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.TrangThaiThe)
+        </td>     
+        <td style="border:1px solid black">
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id= int.Parse(item.MaSoDocGia) }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id= int.Parse(item.MaSoDocGia) })         
+        </td>
+    </tr>
+}
+
+</table>
+<br />
+<div>
+    @Html.ActionLink("Quay lại", "ChinhSuaDocGia", "QuanLyDocGia")
+</div>

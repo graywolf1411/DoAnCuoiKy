@@ -1,0 +1,85 @@
+﻿@model IEnumerable<BackEnd.Models.SanPham>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table style="border:1px solid black; border-collapse:collapse;">
+    <tr>
+        <th style="border:1px solid black">
+            Tên sản phẩm
+        </th>
+        <th style="border:1px solid black">
+            Giá khởi điểm
+        </th>
+        <th style="border:1px solid black">
+            Giá mua ngay
+        </th>
+        <th style="border:1px solid black">
+            Chất liệu
+        </th>
+        <th style="border:1px solid black">
+            Màu sắc
+        </th>
+        <th style="border:1px solid black">
+            Số lượng
+        </th>
+        <th style="border:1px solid black">
+            Mức tăng giá
+        </th>
+        <th style="border:1px solid black">
+            Mã người bán
+        </th>
+        <th style="border:1px solid black">
+            Ngày tạo
+        </th>
+        <th style="border:1px solid black">
+            Ngày cập nhật
+        </th>
+        <th style="border:1px solid black">Thao tác</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.TenSanPham)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.GiaKhoiDiem)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.GiaMuaNgay)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.ChatLieu)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.MauSac)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.MucTangGia)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.MaNguoiBan)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.NgayTao)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.NgayCapNhat)
+        </td>
+        <td style="border:1px solid black">
+            @Html.ActionLink("Duyệt", "Duyet", new { id = item.IDSanPham }, new { onclick="return confirm ('Duyệt sản phẩm này?')"}) 
+        </td>
+    </tr>
+}
+
+</table>

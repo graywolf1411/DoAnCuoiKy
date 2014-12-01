@@ -1,0 +1,30 @@
+﻿@{
+    List<BackEnd.DanhMuc> data = ViewBag.data as List<BackEnd.DanhMuc>;    
+}
+@model BackEnd.Areas.Admin.Models.ListItemlModel
+<div class="formRow">
+    <div class="grid3">
+        <label>
+            Chọn Danh Mục Gốc :</label></div>
+    <div class="grid9 noSearch">
+        @Html.DropDownListFor(x => x.value, Model.listitem,"Hãy Chọn Một Danh Mục",new { @class = "select" })
+    </div>
+    <div class="clear">
+    </div>
+</div>
+<div id="loaddrop">
+    @Html.Action("GetDanhMucDropdf", "Partial", new { id = ViewBag.id,type = 1,danhmuccon =ViewBag.danhmuccon})
+</div>
+<script language="javascript">
+    $("#value").change(function () {
+        var value = $("#value").val();
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("GetDanhMucDrop2","Partial")',
+            data: { id: value,type:@ViewBag.type }, // serializes the form's elements.
+            success: function (data) {
+                $("#loaddrop").html(data); // show response from the php script.
+            }
+        });
+    });
+</script>

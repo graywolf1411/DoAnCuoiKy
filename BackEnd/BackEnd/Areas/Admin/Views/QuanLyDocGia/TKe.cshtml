@@ -1,0 +1,72 @@
+﻿@model IEnumerable<BackEnd.Areas.Admin.Models.MuonSachModel>
+
+@{
+    ViewBag.Title = "TKe";
+}
+
+
+<h2>Những độc giả mượn sách quá hạn</h2><hr><br />
+
+
+<table style="border:1px solid black; border-collapse:collapse; border-spacing:20px">
+    <tr style="text-align:center">
+        <th style="border:1px solid black">
+            Mã đọc giả
+        </th>
+        <th style="border:1px solid black">
+            Họ tên
+        </th>
+        <th style="border:1px solid black">
+            Giới tính
+        </th>
+        <th style="border:1px solid black">
+            Khoa/Lớp/Đơn vị
+        </th>
+        <th style="border:1px solid black">
+            Sách mượn
+        </th>
+        <th style="border:1px solid black">
+            Tác giả
+        </th>
+        <th style="border:1px solid black">
+            Ngày mượn
+        </th>
+        <th style="border:1px solid black">
+            Ngày trả
+        </th>
+        <th style="border:1px solid black">Thao tác</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.madocgia)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.hoten)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.gioitinh)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.donvi)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.nhande)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.tacgia)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.ngaymuon)
+        </td>
+        <td style="border:1px solid black">
+            @Html.DisplayFor(modelItem => item.ngaytra)
+        </td>
+        <td style="border:1px solid black">
+            @Html.ActionLink("Xóa", "removeDGMuonSachQuaHan", new { id= int.Parse(item.madocgia)  }, new { onclick=("return confirm('Xóa nội dung này?')") })
+        </td>
+    </tr>
+}
+
+</table>

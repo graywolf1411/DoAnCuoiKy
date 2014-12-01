@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EAuctionModelStoreContainer" CdmEntityContainer="EAuctionEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="EAuctionModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="acc" ColumnName="acc" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BaoCaoViPhams">
+      <EntityTypeMapping TypeName="EAuctionModel.BaoCaoViPham">
+        <MappingFragment StoreEntitySet="BaoCaoViPham">
+          <ScalarProperty Name="IDBaoCaoViPham" ColumnName="IDBaoCaoViPham" />
+          <ScalarProperty Name="MaNguoiBaoCao" ColumnName="MaNguoiBaoCao" />
+          <ScalarProperty Name="MaNguoiBiBaoCao" ColumnName="MaNguoiBiBaoCao" />
+          <ScalarProperty Name="MaSanPhamBiBaoCao" ColumnName="MaSanPhamBiBaoCao" />
+          <ScalarProperty Name="NoiDungViPham" ColumnName="NoiDungViPham" />
+          <ScalarProperty Name="MaNhanVienDuyet" ColumnName="MaNhanVienDuyet" />
+          <ScalarProperty Name="KetQuaDuyet" ColumnName="KetQuaDuyet" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="NguonDB" ColumnName="NguonDB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietPhienDauGias">
+      <EntityTypeMapping TypeName="EAuctionModel.ChiTietPhienDauGia">
+        <MappingFragment StoreEntitySet="ChiTietPhienDauGia">
+          <ScalarProperty Name="IDCTPhienDauGia" ColumnName="IDCTPhienDauGia" />
+          <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
+          <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
+          <ScalarProperty Name="GiaToiDa" ColumnName="GiaToiDa" />
+          <ScalarProperty Name="GiaTriMonHang" ColumnName="GiaTriMonHang" />
+          <ScalarProperty Name="ThoiGianRaGia" ColumnName="ThoiGianRaGia" />
+          <ScalarProperty Name="TrangThaiPhien" ColumnName="TrangThaiPhien" />
+          <ScalarProperty Name="KieuDauGia" ColumnName="KieuDauGia" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="NguonDB" ColumnName="NguonDB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConNguois">
+      <EntityTypeMapping TypeName="EAuctionModel.ConNguoi">
+        <MappingFragment StoreEntitySet="ConNguoi">
+          <ScalarProperty Name="IDConNguoi" ColumnName="IDConNguoi" />
+          <ScalarProperty Name="LoaiNhanSu" ColumnName="LoaiNhanSu" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="TenLot" ColumnName="TenLot" />
+          <ScalarProperty Name="Ho" ColumnName="Ho" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="ThanhPho" ColumnName="ThanhPho" />
+          <ScalarProperty Name="QuocGia" ColumnName="QuocGia" />
+          <ScalarProperty Name="MaPostal" ColumnName="MaPostal" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="SoThePayPal" ColumnName="SoThePayPal" />
+          <ScalarProperty Name="PasswordPayPal" ColumnName="PasswordPayPal" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="NguonDB" ColumnName="NguonDB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhMucs">
+      <EntityTypeMapping TypeName="EAuctionModel.DanhMuc">
+        <MappingFragment StoreEntitySet="DanhMuc">
+          <ScalarProperty Name="IDDanhMuc" ColumnName="IDDanhMuc" />
+          <ScalarProperty Name="TenDanhMuc" ColumnName="TenDanhMuc" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="NguonDB" ColumnName="NguonDB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhMucAdmins">
+      <EntityTypeMapping TypeName="EAuctionModel.DanhMucAdmin">
+        <MappingFragment StoreEntitySet="DanhMucAdmin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="oder" ColumnName="oder" />
+          <ScalarProperty Name="parent" ColumnName="parent" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhSachQuanTams">
+      <EntityTypeMapping TypeName="EAuctionModel.DanhSachQuanTam">
+        <MappingFragment StoreEntitySet="DanhSachQuanTam">
+          <ScalarProperty Name="IDDSQuanTam" ColumnName="IDDSQuanTam" />
+          <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
+          <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
+          <ScalarProperty Name="MaPhienDauGia" ColumnName="MaPhienDauGia" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="NguonDB" ColumnName="NguonDB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhSachYeuThiches">
+      <EntityTypeMapping TypeName="EAuctionModel.DanhSachYeuThich">
+        <MappingFragment StoreEntitySet="DanhSachYeuThich">
+          <ScalarProperty Name="IDDSYeuThich" ColumnName="IDDSYeuThich" />
+          <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
+          <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
+          <ScalarProperty Name="MaNguoiYeuThich" ColumnName="MaNguoiYeuThich" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="NguonDB" ColumnName="NguonDB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonHangs">
+      <EntityTypeMapping TypeName="EAuctionModel.DonHang">
+        <MappingFragment StoreEntitySet="DonHang">
+          <ScalarProperty Name="IDDonHang" ColumnName="IDDonHang" />
+          <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
+          <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="PhiShipHang" ColumnName="PhiShipHang" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="NguonDB" ColumnName="NguonDB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HinhAnhSanPhams">
+      <EntityTypeMapping TypeName="EAuctionModel.HinhAnhSanPham">
+        <MappingFragment StoreEntitySet="HinhAnhSanPham">
+          <ScalarProperty Name="IDHinhAnh" ColumnName="IDHinhAnh" />
+          <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
+          <ScalarProperty Name="ImageUrl1" ColumnName="ImageUrl1" />
+          <ScalarProperty Name="ImageUrl2" ColumnName="ImageUrl2" />
+          <ScalarProperty Name="ImageUrl3" ColumnName="ImageUrl3" />
+          <ScalarProperty Name="ImageUrl4" ColumnName="ImageUrl4" />
+          <ScalarProperty Name="ImageUrl5" ColumnName="ImageUrl5" />
+          <ScalarProperty Name="ImageUrl6" ColumnName="ImageUrl6" />
+          <ScalarProperty Name="ImageUrl7" ColumnName="ImageUrl7" />
+          <ScalarProperty Name="ImageUrl8" ColumnName="ImageUrl8" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="NguonDB" ColumnName="NguonDB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHangs">
+      <EntityTypeMapping TypeName="EAuctionModel.KhachHang">
+        <MappingFragment StoreEntitySet="KhachHang">
+          <ScalarProperty Name="IDKhachHang" ColumnName="IDKhachHang" />
+          <ScalarProperty Name="IDConNguoi" ColumnName="IDConNguoi" />
+          <ScalarProperty Name="NhanMailKhuyenMai" ColumnName="NhanMailKhuyenMai" />
+          <ScalarProperty Name="SoDuTaiKhoan" ColumnName="SoDuTaiKhoan" />
+          <ScalarProperty Name="PositiveFeedback" ColumnName="PositiveFeedback" />
+          <ScalarProperty Name="TrangThaiHoatDong" ColumnName="TrangThaiHoatDong" />
+          <ScalarProperty Name="DiaChiGiaoHang" ColumnName="DiaChiGiaoHang" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="NguonDB" ColumnName="NguonDB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MoTaSanPhams">
+      <EntityTypeMapping TypeName="EAuctionModel.MoTaSanPham">
+        <MappingFragment StoreEntitySet="MoTaSanPham">
+          <ScalarProperty Name="IDMoTa" ColumnName="IDMoTa" />
+          <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
+          <ScalarProperty Name="MoTaTiengViet" ColumnName="MoTaTiengViet" />
+          <ScalarProperty Name="MoTaTiengAnh" ColumnName="MoTaTiengAnh" />
+          <ScalarProperty Name="MoTaTiengTrung" ColumnName="MoTaTiengTrung" />
+          <ScalarProperty Name="MoTaTiengNhat" ColumnName="MoTaTiengNhat" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="NguonDB" ColumnName="NguonDB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanViens">
+      <EntityTypeMapping TypeName="EAuctionModel.NhanVien">
+        <MappingFragment StoreEntitySet="NhanVien">
+          <ScalarProperty Name="IDNhanVien" ColumnName="IDNhanVien" />
+          <ScalarProperty Name="IDConNguoi" ColumnName="IDConNguoi" />
+          <ScalarProperty Name="NgayVaoLam" ColumnName="NgayVaoLam" />
+          <ScalarProperty Name="BacLuong" ColumnName="BacLuong" />
+          <ScalarProperty Name="SoGioDaNghiPhep" ColumnName="SoGioDaNghiPhep" />
+          <ScalarProperty Name="TinhTrangHoatDong" ColumnName="TinhTrangHoatDong" />
+          <ScalarProperty Name="TenCongViec" ColumnName="TenCongViec" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="NguonDB" ColumnName="NguonDB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhanLoaiCuaSanPhams">
+      <EntityTypeMapping TypeName="EAuctionModel.PhanLoaiCuaSanPham">
+        <MappingFragment StoreEntitySet="PhanLoaiCuaSanPham">
+          <ScalarProperty Name="IDPhanLoaiSP" ColumnName="IDPhanLoaiSP" />
+          <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
+          <ScalarProperty Name="MaDanhMuc" ColumnName="MaDanhMuc" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="NguonDB" ColumnName="NguonDB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhams">
+      <EntityTypeMapping TypeName="EAuctionModel.SanPham">
+        <MappingFragment StoreEntitySet="SanPham">
+          <ScalarProperty Name="IDSanPham" ColumnName="IDSanPham" />
+          <ScalarProperty Name="TenSanPham" ColumnName="TenSanPham" />
+          <ScalarProperty Name="KichCo" ColumnName="KichCo" />
+          <ScalarProperty Name="GiaKhoiDiem" ColumnName="GiaKhoiDiem" />
+          <ScalarProperty Name="GiaMuaNgay" ColumnName="GiaMuaNgay" />
+          <ScalarProperty Name="DiaDiemChapNhanGiaoHang" ColumnName="DiaDiemChapNhanGiaoHang" />
+          <ScalarProperty Name="ThoiGianHoanThanhGiaoHang" ColumnName="ThoiGianHoanThanhGiaoHang" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+          <ScalarProperty Name="ThuongHieu" ColumnName="ThuongHieu" />
+          <ScalarProperty Name="ChatLieu" ColumnName="ChatLieu" />
+          <ScalarProperty Name="MauSac" ColumnName="MauSac" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="DiaChiHienTaiCuaSanPham" ColumnName="DiaChiHienTaiCuaSanPham" />
+          <ScalarProperty Name="MucTangGia" ColumnName="MucTangGia" />
+          <ScalarProperty Name="MaNguoiBan" ColumnName="MaNguoiBan" />
+          <ScalarProperty Name="MaNhanVienKiemDinh" ColumnName="MaNhanVienKiemDinh" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+          <ScalarProperty Name="NguonDB" ColumnName="NguonDB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServerDBs">
+      <EntityTypeMapping TypeName="EAuctionModel.ServerDB">
+        <MappingFragment StoreEntitySet="ServerDB">
+          <ScalarProperty Name="IDServer" ColumnName="IDServer" />
+          <ScalarProperty Name="TenServer" ColumnName="TenServer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

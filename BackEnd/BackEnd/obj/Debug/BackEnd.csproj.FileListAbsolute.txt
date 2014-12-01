@@ -1,0 +1,60 @@
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\BackEnd.dll
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\BackEnd.pdb
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\Antlr3.Runtime.dll
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\EntityFramework.dll
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\Microsoft.Web.Infrastructure.dll
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\Newtonsoft.Json.dll
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\System.Net.Http.Formatting.dll
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\System.Web.Http.dll
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\System.Web.Http.WebHost.dll
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\System.Web.Mvc.dll
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\System.Web.Optimization.dll
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\System.Web.Providers.dll
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\System.Web.Razor.dll
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\System.Web.WebPages.Deployment.dll
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\System.Web.WebPages.dll
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\System.Web.WebPages.Razor.dll
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\WebGrease.dll
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\EntityFramework.xml
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\Newtonsoft.Json.xml
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\System.Net.Http.Formatting.xml
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\System.Web.Http.xml
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\System.Web.Http.WebHost.xml
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\System.Web.Mvc.xml
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\System.Web.Razor.xml
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\System.Web.WebPages.xml
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\System.Web.WebPages.Deployment.xml
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\bin\System.Web.WebPages.Razor.xml
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\obj\Debug\BackEnd.csprojResolveAssemblyReference.cache
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\obj\Debug\BackEnd.dll
+E:\MON HOC_NAM 4\Thuong mai dien tu\Project Bai Tap\BackEnd\BackEnd\obj\Debug\BackEnd.pdb
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\obj\Debug\BackEnd.csprojResolveAssemblyReference.cache
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\obj\Debug\BackEnd.dll
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\BackEnd.dll
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\BackEnd.pdb
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\Antlr3.Runtime.dll
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\EntityFramework.dll
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\Microsoft.Web.Infrastructure.dll
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\Newtonsoft.Json.dll
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\System.Net.Http.Formatting.dll
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\System.Web.Http.dll
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\System.Web.Http.WebHost.dll
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\System.Web.Mvc.dll
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\System.Web.Optimization.dll
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\System.Web.Providers.dll
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\System.Web.Razor.dll
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\System.Web.WebPages.Deployment.dll
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\System.Web.WebPages.dll
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\System.Web.WebPages.Razor.dll
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\WebGrease.dll
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\EntityFramework.xml
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\Newtonsoft.Json.xml
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\System.Net.Http.Formatting.xml
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\System.Web.Http.xml
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\System.Web.Http.WebHost.xml
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\System.Web.Mvc.xml
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\System.Web.Razor.xml
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\System.Web.WebPages.xml
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\System.Web.WebPages.Deployment.xml
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\bin\System.Web.WebPages.Razor.xml
+E:\MON HOC_NAM 4\PTUD HTTT HD\CAI DAT\BackEnd\BackEnd\obj\Debug\BackEnd.pdb

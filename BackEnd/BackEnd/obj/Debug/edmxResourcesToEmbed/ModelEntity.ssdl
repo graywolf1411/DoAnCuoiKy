@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ytemoi_dataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ytemoi_dataModelStoreContainer">
+    <EntitySet Name="Account" EntityType="ytemoi_dataModel.Store.Account" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Banner" EntityType="ytemoi_dataModel.Store.Banner" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BinhLuan" EntityType="ytemoi_dataModel.Store.BinhLuan" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChiNhanh" EntityType="ytemoi_dataModel.Store.ChiNhanh" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DanhMuc" EntityType="ytemoi_dataModel.Store.DanhMuc" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DanhMucAdmin" EntityType="ytemoi_dataModel.Store.DanhMucAdmin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DefaultData" EntityType="ytemoi_dataModel.Store.DefaultData" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GioiThieu" EntityType="ytemoi_dataModel.Store.GioiThieu" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HoaDon" EntityType="ytemoi_dataModel.Store.HoaDon" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HoatDong" EntityType="ytemoi_dataModel.Store.HoatDong" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HoTroTrucTuyen" EntityType="ytemoi_dataModel.Store.HoTroTrucTuyen" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LienHe" EntityType="ytemoi_dataModel.Store.LienHe" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Menu" EntityType="ytemoi_dataModel.Store.Menu" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SanPham" EntityType="ytemoi_dataModel.Store.SanPham" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SanPhamHoaDon" EntityType="ytemoi_dataModel.Store.SanPhamHoaDon" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SlideShow" EntityType="ytemoi_dataModel.Store.SlideShow" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TinTuc" EntityType="ytemoi_dataModel.Store.TinTuc" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__BinhLuan__id_san__1ED998B2" Association="ytemoi_dataModel.Store.FK__BinhLuan__id_san__1ED998B2">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="BinhLuan" EntitySet="BinhLuan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoatDong__id_dan__300424B4" Association="ytemoi_dataModel.Store.FK__HoatDong__id_dan__300424B4">
+      <End Role="DanhMuc" EntitySet="DanhMuc" />
+      <End Role="HoatDong" EntitySet="HoatDong" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SanPham__id_danh__173876EA" Association="ytemoi_dataModel.Store.FK__SanPham__id_danh__173876EA">
+      <End Role="DanhMuc" EntitySet="DanhMuc" />
+      <End Role="SanPham" EntitySet="SanPham" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SanPhamHo__id_ho__47DBAE45" Association="ytemoi_dataModel.Store.FK__SanPhamHo__id_ho__47DBAE45">
+      <End Role="HoaDon" EntitySet="HoaDon" />
+      <End Role="SanPhamHoaDon" EntitySet="SanPhamHoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TinTuc__id_danhm__29572725" Association="ytemoi_dataModel.Store.FK__TinTuc__id_danhm__29572725">
+      <End Role="DanhMuc" EntitySet="DanhMuc" />
+      <End Role="TinTuc" EntitySet="TinTuc" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="acc" />
+    </Key>
+    <Property Name="acc" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="pass" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="email" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Banner">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="img" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="link" Type="nvarchar" MaxLength="255" />
+    <Property Name="oder" Type="int" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BinhLuan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="id_sanpham" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="data" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ChiNhanh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="chinhanh1" Type="nvarchar(max)" />
+    <Property Name="chinhanh2" Type="nvarchar(max)" />
+    <Property Name="chinhanh3" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="DanhMuc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="link" Type="nvarchar" MaxLength="255" />
+    <Property Name="oder" Type="int" Nullable="false" />
+    <Property Name="parent" Type="nvarchar" MaxLength="255" />
+    <Property Name="type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DanhMucAdmin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="link" Type="nvarchar" MaxLength="255" />
+    <Property Name="oder" Type="int" Nullable="false" />
+    <Property Name="parent" Type="nvarchar" MaxLength="255" />
+    <Property Name="icon" Type="nvarchar" MaxLength="255" />
+    <Property Name="type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DefaultData">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="value" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="GioiThieu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="tomtat" Type="nvarchar(max)" />
+    <Property Name="noidung" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" />
+    <Property Name="address" Type="nvarchar" MaxLength="255" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HoatDong">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="id_danhmuc" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="img_nen" Type="nvarchar" MaxLength="255" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="data" Type="nvarchar(max)" />
+    <Property Name="luot_view" Type="int" Nullable="false" />
+    <Property Name="oder" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HoTroTrucTuyen">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" />
+    <Property Name="link" Type="nvarchar" MaxLength="255" />
+    <Property Name="type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LienHe">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" />
+    <Property Name="sdt" Type="nvarchar" MaxLength="255" />
+    <Property Name="data" Type="nvarchar(max)" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="link" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="oder" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="id_danhmuc" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="img_nen_1" Type="nvarchar" MaxLength="255" />
+    <Property Name="img_nen_2" Type="nvarchar" MaxLength="255" />
+    <Property Name="img_nen_3" Type="nvarchar" MaxLength="255" />
+    <Property Name="img_nen_4" Type="nvarchar" MaxLength="255" />
+    <Property Name="img_nen_5" Type="nvarchar" MaxLength="255" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="mota" Type="nvarchar(max)" />
+    <Property Name="thongtinkythuat" Type="nvarchar(max)" />
+    <Property Name="thongtinkythuat2" Type="nvarchar(max)" />
+    <Property Name="thongtinkythuat3" Type="nvarchar(max)" />
+    <Property Name="gia" Type="float" Nullable="false" />
+    <Property Name="luot_view" Type="int" Nullable="false" />
+    <Property Name="oder" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SanPhamHoaDon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="id_sanpham" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="id_hoadon" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" />
+    <Property Name="soluong" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SlideShow">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="img" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="link" Type="nvarchar" MaxLength="255" />
+    <Property Name="oder" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TinTuc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="id_danhmuc" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="img_nen" Type="nvarchar" MaxLength="255" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="tomtat" Type="nvarchar(max)" />
+    <Property Name="mota" Type="nvarchar(max)" />
+    <Property Name="luot_view" Type="int" Nullable="false" />
+    <Property Name="oder" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__BinhLuan__id_san__1ED998B2">
+    <End Role="SanPham" Type="ytemoi_dataModel.Store.SanPham" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BinhLuan" Type="ytemoi_dataModel.Store.BinhLuan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="BinhLuan">
+        <PropertyRef Name="id_sanpham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoatDong__id_dan__300424B4">
+    <End Role="DanhMuc" Type="ytemoi_dataModel.Store.DanhMuc" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HoatDong" Type="ytemoi_dataModel.Store.HoatDong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMuc">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="HoatDong">
+        <PropertyRef Name="id_danhmuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SanPham__id_danh__173876EA">
+    <End Role="DanhMuc" Type="ytemoi_dataModel.Store.DanhMuc" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SanPham" Type="ytemoi_dataModel.Store.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMuc">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="id_danhmuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SanPhamHo__id_ho__47DBAE45">
+    <End Role="HoaDon" Type="ytemoi_dataModel.Store.HoaDon" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SanPhamHoaDon" Type="ytemoi_dataModel.Store.SanPhamHoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SanPhamHoaDon">
+        <PropertyRef Name="id_hoadon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TinTuc__id_danhm__29572725">
+    <End Role="DanhMuc" Type="ytemoi_dataModel.Store.DanhMuc" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TinTuc" Type="ytemoi_dataModel.Store.TinTuc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMuc">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TinTuc">
+        <PropertyRef Name="id_danhmuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

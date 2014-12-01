@@ -1,0 +1,880 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EAuction_EC04_003Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EAuctionEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="EAuction_EC04_003Model.Account" />
+    <EntitySet Name="BaoCaoViPhams" EntityType="EAuction_EC04_003Model.BaoCaoViPham" />
+    <EntitySet Name="ChiTietPhienDauGias" EntityType="EAuction_EC04_003Model.ChiTietPhienDauGia" />
+    <EntitySet Name="ConNguois" EntityType="EAuction_EC04_003Model.ConNguoi" />
+    <EntitySet Name="DanhMucs" EntityType="EAuction_EC04_003Model.DanhMuc" />
+    <EntitySet Name="DanhMucAdmins" EntityType="EAuction_EC04_003Model.DanhMucAdmin" />
+    <EntitySet Name="DanhSachQuanTams" EntityType="EAuction_EC04_003Model.DanhSachQuanTam" />
+    <EntitySet Name="DanhSachYeuThiches" EntityType="EAuction_EC04_003Model.DanhSachYeuThich" />
+    <EntitySet Name="DonHangs" EntityType="EAuction_EC04_003Model.DonHang" />
+    <EntitySet Name="HinhAnhSanPhams" EntityType="EAuction_EC04_003Model.HinhAnhSanPham" />
+    <EntitySet Name="KhachHangs" EntityType="EAuction_EC04_003Model.KhachHang" />
+    <EntitySet Name="MoTaSanPhams" EntityType="EAuction_EC04_003Model.MoTaSanPham" />
+    <EntitySet Name="NhanViens" EntityType="EAuction_EC04_003Model.NhanVien" />
+    <EntitySet Name="PhanLoaiCuaSanPhams" EntityType="EAuction_EC04_003Model.PhanLoaiCuaSanPham" />
+    <EntitySet Name="SanPhams" EntityType="EAuction_EC04_003Model.SanPham" />
+    <EntitySet Name="ServerDBs" EntityType="EAuction_EC04_003Model.ServerDB" />
+    <AssociationSet Name="FK_BaoCaoViPham_KhachHang1" Association="EAuction_EC04_003Model.FK_BaoCaoViPham_KhachHang1">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="BaoCaoViPham" EntitySet="BaoCaoViPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaoCaoViPham_KhachHang2" Association="EAuction_EC04_003Model.FK_BaoCaoViPham_KhachHang2">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="BaoCaoViPham" EntitySet="BaoCaoViPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaoCaoViPham_NhanVien" Association="EAuction_EC04_003Model.FK_BaoCaoViPham_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="BaoCaoViPham" EntitySet="BaoCaoViPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaoCaoViPham_SanPham" Association="EAuction_EC04_003Model.FK_BaoCaoViPham_SanPham">
+      <End Role="SanPham" EntitySet="SanPhams" />
+      <End Role="BaoCaoViPham" EntitySet="BaoCaoViPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaoCaoViPham_ServerDB" Association="EAuction_EC04_003Model.FK_BaoCaoViPham_ServerDB">
+      <End Role="ServerDB" EntitySet="ServerDBs" />
+      <End Role="BaoCaoViPham" EntitySet="BaoCaoViPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietDauGia_KhachHang" Association="EAuction_EC04_003Model.FK_ChiTietDauGia_KhachHang">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="ChiTietPhienDauGia" EntitySet="ChiTietPhienDauGias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietDauGia_SanPham" Association="EAuction_EC04_003Model.FK_ChiTietDauGia_SanPham">
+      <End Role="SanPham" EntitySet="SanPhams" />
+      <End Role="ChiTietPhienDauGia" EntitySet="ChiTietPhienDauGias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietDauGia_ServerDB" Association="EAuction_EC04_003Model.FK_ChiTietDauGia_ServerDB">
+      <End Role="ServerDB" EntitySet="ServerDBs" />
+      <End Role="ChiTietPhienDauGia" EntitySet="ChiTietPhienDauGias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSQuanTam_CTPhienDauGia" Association="EAuction_EC04_003Model.FK_DSQuanTam_CTPhienDauGia">
+      <End Role="ChiTietPhienDauGia" EntitySet="ChiTietPhienDauGias" />
+      <End Role="DanhSachQuanTam" EntitySet="DanhSachQuanTams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConNguoi_ServerDB" Association="EAuction_EC04_003Model.FK_ConNguoi_ServerDB">
+      <End Role="ServerDB" EntitySet="ServerDBs" />
+      <End Role="ConNguoi" EntitySet="ConNguois" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KhachHang_ConNguoi" Association="EAuction_EC04_003Model.FK_KhachHang_ConNguoi">
+      <End Role="ConNguoi" EntitySet="ConNguois" />
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_ConNguoi" Association="EAuction_EC04_003Model.FK_NhanVien_ConNguoi">
+      <End Role="ConNguoi" EntitySet="ConNguois" />
+      <End Role="NhanVien" EntitySet="NhanViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DanhMuc_ServerDB" Association="EAuction_EC04_003Model.FK_DanhMuc_ServerDB">
+      <End Role="ServerDB" EntitySet="ServerDBs" />
+      <End Role="DanhMuc" EntitySet="DanhMucs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhanLoaiCuaSanPham_DanhMuc" Association="EAuction_EC04_003Model.FK_PhanLoaiCuaSanPham_DanhMuc">
+      <End Role="DanhMuc" EntitySet="DanhMucs" />
+      <End Role="PhanLoaiCuaSanPham" EntitySet="PhanLoaiCuaSanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSQuanTam_KhachHang" Association="EAuction_EC04_003Model.FK_DSQuanTam_KhachHang">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="DanhSachQuanTam" EntitySet="DanhSachQuanTams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSQuanTam_SanPham" Association="EAuction_EC04_003Model.FK_DSQuanTam_SanPham">
+      <End Role="SanPham" EntitySet="SanPhams" />
+      <End Role="DanhSachQuanTam" EntitySet="DanhSachQuanTams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSQuanTam_ServerDB" Association="EAuction_EC04_003Model.FK_DSQuanTam_ServerDB">
+      <End Role="ServerDB" EntitySet="ServerDBs" />
+      <End Role="DanhSachQuanTam" EntitySet="DanhSachQuanTams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSYeuThich_KhachHang1" Association="EAuction_EC04_003Model.FK_DSYeuThich_KhachHang1">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="DanhSachYeuThich" EntitySet="DanhSachYeuThiches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSYeuThich_KhachHang2" Association="EAuction_EC04_003Model.FK_DSYeuThich_KhachHang2">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="DanhSachYeuThich" EntitySet="DanhSachYeuThiches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSYeuThich_SanPham" Association="EAuction_EC04_003Model.FK_DSYeuThich_SanPham">
+      <End Role="SanPham" EntitySet="SanPhams" />
+      <End Role="DanhSachYeuThich" EntitySet="DanhSachYeuThiches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSYeuThich_ServerDB" Association="EAuction_EC04_003Model.FK_DSYeuThich_ServerDB">
+      <End Role="ServerDB" EntitySet="ServerDBs" />
+      <End Role="DanhSachYeuThich" EntitySet="DanhSachYeuThiches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonHang_KhachHang" Association="EAuction_EC04_003Model.FK_DonHang_KhachHang">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="DonHang" EntitySet="DonHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonHang_SanPham" Association="EAuction_EC04_003Model.FK_DonHang_SanPham">
+      <End Role="SanPham" EntitySet="SanPhams" />
+      <End Role="DonHang" EntitySet="DonHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonHang_ServerDB" Association="EAuction_EC04_003Model.FK_DonHang_ServerDB">
+      <End Role="ServerDB" EntitySet="ServerDBs" />
+      <End Role="DonHang" EntitySet="DonHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HinhAnh_SanPham" Association="EAuction_EC04_003Model.FK_HinhAnh_SanPham">
+      <End Role="SanPham" EntitySet="SanPhams" />
+      <End Role="HinhAnhSanPham" EntitySet="HinhAnhSanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HinhAnh_ServerDB" Association="EAuction_EC04_003Model.FK_HinhAnh_ServerDB">
+      <End Role="ServerDB" EntitySet="ServerDBs" />
+      <End Role="HinhAnhSanPham" EntitySet="HinhAnhSanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KhachHang_ServerDB" Association="EAuction_EC04_003Model.FK_KhachHang_ServerDB">
+      <End Role="ServerDB" EntitySet="ServerDBs" />
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SanPham_KhachHang" Association="EAuction_EC04_003Model.FK_SanPham_KhachHang">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="SanPham" EntitySet="SanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MoTa_SanPham" Association="EAuction_EC04_003Model.FK_MoTa_SanPham">
+      <End Role="SanPham" EntitySet="SanPhams" />
+      <End Role="MoTaSanPham" EntitySet="MoTaSanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MoTa_ServerDB" Association="EAuction_EC04_003Model.FK_MoTa_ServerDB">
+      <End Role="ServerDB" EntitySet="ServerDBs" />
+      <End Role="MoTaSanPham" EntitySet="MoTaSanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_ServerDB" Association="EAuction_EC04_003Model.FK_NhanVien_ServerDB">
+      <End Role="ServerDB" EntitySet="ServerDBs" />
+      <End Role="NhanVien" EntitySet="NhanViens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SanPham_NhanVien" Association="EAuction_EC04_003Model.FK_SanPham_NhanVien">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="SanPham" EntitySet="SanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhanLoai_SanPham" Association="EAuction_EC04_003Model.FK_PhanLoai_SanPham">
+      <End Role="SanPham" EntitySet="SanPhams" />
+      <End Role="PhanLoaiCuaSanPham" EntitySet="PhanLoaiCuaSanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhanLoaiCuaSanPham_ServerDB" Association="EAuction_EC04_003Model.FK_PhanLoaiCuaSanPham_ServerDB">
+      <End Role="ServerDB" EntitySet="ServerDBs" />
+      <End Role="PhanLoaiCuaSanPham" EntitySet="PhanLoaiCuaSanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SanPham_ServerDB" Association="EAuction_EC04_003Model.FK_SanPham_ServerDB">
+      <End Role="ServerDB" EntitySet="ServerDBs" />
+      <End Role="SanPham" EntitySet="SanPhams" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="acc" />
+    </Key>
+    <Property Name="acc" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="pass" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="email" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="BaoCaoViPham">
+    <Key>
+      <PropertyRef Name="IDBaoCaoViPham" />
+    </Key>
+    <Property Name="IDBaoCaoViPham" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MaNguoiBaoCao" Type="Int32" />
+    <Property Name="MaNguoiBiBaoCao" Type="Int32" />
+    <Property Name="MaSanPhamBiBaoCao" Type="Int32" />
+    <Property Name="NoiDungViPham" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MaNhanVienDuyet" Type="Int32" />
+    <Property Name="KetQuaDuyet" Type="Int32" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="NguonDB" Type="Int32" />
+    <NavigationProperty Name="KhachHang" Relationship="EAuction_EC04_003Model.FK_BaoCaoViPham_KhachHang1" FromRole="BaoCaoViPham" ToRole="KhachHang" />
+    <NavigationProperty Name="KhachHang1" Relationship="EAuction_EC04_003Model.FK_BaoCaoViPham_KhachHang2" FromRole="BaoCaoViPham" ToRole="KhachHang" />
+    <NavigationProperty Name="NhanVien" Relationship="EAuction_EC04_003Model.FK_BaoCaoViPham_NhanVien" FromRole="BaoCaoViPham" ToRole="NhanVien" />
+    <NavigationProperty Name="SanPham" Relationship="EAuction_EC04_003Model.FK_BaoCaoViPham_SanPham" FromRole="BaoCaoViPham" ToRole="SanPham" />
+    <NavigationProperty Name="ServerDB" Relationship="EAuction_EC04_003Model.FK_BaoCaoViPham_ServerDB" FromRole="BaoCaoViPham" ToRole="ServerDB" />
+  </EntityType>
+  <EntityType Name="ChiTietPhienDauGia">
+    <Key>
+      <PropertyRef Name="IDCTPhienDauGia" />
+    </Key>
+    <Property Name="IDCTPhienDauGia" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MaSanPham" Type="Int32" />
+    <Property Name="MaKhachHang" Type="Int32" />
+    <Property Name="GiaToiDa" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="GiaTriMonHang" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ThoiGianRaGia" Type="DateTime" Precision="3" />
+    <Property Name="TrangThaiPhien" Type="Int32" />
+    <Property Name="KieuDauGia" Type="Int32" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="NguonDB" Type="Int32" />
+    <NavigationProperty Name="KhachHang" Relationship="EAuction_EC04_003Model.FK_ChiTietDauGia_KhachHang" FromRole="ChiTietPhienDauGia" ToRole="KhachHang" />
+    <NavigationProperty Name="SanPham" Relationship="EAuction_EC04_003Model.FK_ChiTietDauGia_SanPham" FromRole="ChiTietPhienDauGia" ToRole="SanPham" />
+    <NavigationProperty Name="ServerDB" Relationship="EAuction_EC04_003Model.FK_ChiTietDauGia_ServerDB" FromRole="ChiTietPhienDauGia" ToRole="ServerDB" />
+    <NavigationProperty Name="DanhSachQuanTams" Relationship="EAuction_EC04_003Model.FK_DSQuanTam_CTPhienDauGia" FromRole="ChiTietPhienDauGia" ToRole="DanhSachQuanTam" />
+  </EntityType>
+  <EntityType Name="ConNguoi">
+    <Key>
+      <PropertyRef Name="IDConNguoi" />
+    </Key>
+    <Property Name="IDConNguoi" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="LoaiNhanSu" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="GioiTinh" Type="String" MaxLength="3" Unicode="true" FixedLength="false" />
+    <Property Name="Ten" Type="String" MaxLength="7" Unicode="true" FixedLength="false" />
+    <Property Name="TenLot" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Ho" Type="String" MaxLength="7" Unicode="true" FixedLength="false" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="3" />
+    <Property Name="Username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="ThanhPho" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="QuocGia" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MaPostal" Type="Int32" />
+    <Property Name="SDT" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="SoThePayPal" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordPayPal" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="NguonDB" Type="Int32" />
+    <NavigationProperty Name="ServerDB" Relationship="EAuction_EC04_003Model.FK_ConNguoi_ServerDB" FromRole="ConNguoi" ToRole="ServerDB" />
+    <NavigationProperty Name="KhachHangs" Relationship="EAuction_EC04_003Model.FK_KhachHang_ConNguoi" FromRole="ConNguoi" ToRole="KhachHang" />
+    <NavigationProperty Name="NhanViens" Relationship="EAuction_EC04_003Model.FK_NhanVien_ConNguoi" FromRole="ConNguoi" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="DanhMuc">
+    <Key>
+      <PropertyRef Name="IDDanhMuc" />
+    </Key>
+    <Property Name="IDDanhMuc" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TenDanhMuc" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="NguonDB" Type="Int32" />
+    <NavigationProperty Name="ServerDB" Relationship="EAuction_EC04_003Model.FK_DanhMuc_ServerDB" FromRole="DanhMuc" ToRole="ServerDB" />
+    <NavigationProperty Name="PhanLoaiCuaSanPhams" Relationship="EAuction_EC04_003Model.FK_PhanLoaiCuaSanPham_DanhMuc" FromRole="DanhMuc" ToRole="PhanLoaiCuaSanPham" />
+  </EntityType>
+  <EntityType Name="DanhMucAdmin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="link" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="oder" Type="Int32" Nullable="false" />
+    <Property Name="parent" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="icon" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DanhSachQuanTam">
+    <Key>
+      <PropertyRef Name="IDDSQuanTam" />
+    </Key>
+    <Property Name="IDDSQuanTam" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MaKhachHang" Type="Int32" />
+    <Property Name="MaSanPham" Type="Int32" />
+    <Property Name="MaPhienDauGia" Type="Int32" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="NguonDB" Type="Int32" />
+    <NavigationProperty Name="ChiTietPhienDauGia" Relationship="EAuction_EC04_003Model.FK_DSQuanTam_CTPhienDauGia" FromRole="DanhSachQuanTam" ToRole="ChiTietPhienDauGia" />
+    <NavigationProperty Name="KhachHang" Relationship="EAuction_EC04_003Model.FK_DSQuanTam_KhachHang" FromRole="DanhSachQuanTam" ToRole="KhachHang" />
+    <NavigationProperty Name="SanPham" Relationship="EAuction_EC04_003Model.FK_DSQuanTam_SanPham" FromRole="DanhSachQuanTam" ToRole="SanPham" />
+    <NavigationProperty Name="ServerDB" Relationship="EAuction_EC04_003Model.FK_DSQuanTam_ServerDB" FromRole="DanhSachQuanTam" ToRole="ServerDB" />
+  </EntityType>
+  <EntityType Name="DanhSachYeuThich">
+    <Key>
+      <PropertyRef Name="IDDSYeuThich" />
+    </Key>
+    <Property Name="IDDSYeuThich" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MaKhachHang" Type="Int32" />
+    <Property Name="MaSanPham" Type="Int32" />
+    <Property Name="MaNguoiYeuThich" Type="Int32" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="NguonDB" Type="Int32" />
+    <NavigationProperty Name="KhachHang" Relationship="EAuction_EC04_003Model.FK_DSYeuThich_KhachHang1" FromRole="DanhSachYeuThich" ToRole="KhachHang" />
+    <NavigationProperty Name="KhachHang1" Relationship="EAuction_EC04_003Model.FK_DSYeuThich_KhachHang2" FromRole="DanhSachYeuThich" ToRole="KhachHang" />
+    <NavigationProperty Name="SanPham" Relationship="EAuction_EC04_003Model.FK_DSYeuThich_SanPham" FromRole="DanhSachYeuThich" ToRole="SanPham" />
+    <NavigationProperty Name="ServerDB" Relationship="EAuction_EC04_003Model.FK_DSYeuThich_ServerDB" FromRole="DanhSachYeuThich" ToRole="ServerDB" />
+  </EntityType>
+  <EntityType Name="DonHang">
+    <Key>
+      <PropertyRef Name="IDDonHang" />
+    </Key>
+    <Property Name="IDDonHang" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MaSanPham" Type="Int32" />
+    <Property Name="MaKhachHang" Type="Int32" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="PhiShipHang" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Gia" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ThanhTien" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="NguonDB" Type="Int32" />
+    <NavigationProperty Name="KhachHang" Relationship="EAuction_EC04_003Model.FK_DonHang_KhachHang" FromRole="DonHang" ToRole="KhachHang" />
+    <NavigationProperty Name="SanPham" Relationship="EAuction_EC04_003Model.FK_DonHang_SanPham" FromRole="DonHang" ToRole="SanPham" />
+    <NavigationProperty Name="ServerDB" Relationship="EAuction_EC04_003Model.FK_DonHang_ServerDB" FromRole="DonHang" ToRole="ServerDB" />
+  </EntityType>
+  <EntityType Name="HinhAnhSanPham">
+    <Key>
+      <PropertyRef Name="IDHinhAnh" />
+    </Key>
+    <Property Name="IDHinhAnh" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MaSanPham" Type="Int32" />
+    <Property Name="ImageUrl1" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ImageUrl2" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ImageUrl3" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ImageUrl4" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ImageUrl5" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ImageUrl6" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ImageUrl7" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ImageUrl8" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="NguonDB" Type="Int32" />
+    <NavigationProperty Name="SanPham" Relationship="EAuction_EC04_003Model.FK_HinhAnh_SanPham" FromRole="HinhAnhSanPham" ToRole="SanPham" />
+    <NavigationProperty Name="ServerDB" Relationship="EAuction_EC04_003Model.FK_HinhAnh_ServerDB" FromRole="HinhAnhSanPham" ToRole="ServerDB" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="IDKhachHang" />
+    </Key>
+    <Property Name="IDKhachHang" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IDConNguoi" Type="Int32" />
+    <Property Name="NhanMailKhuyenMai" Type="Boolean" />
+    <Property Name="SoDuTaiKhoan" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PositiveFeedback" Type="Double" />
+    <Property Name="TrangThaiHoatDong" Type="Int32" />
+    <Property Name="DiaChiGiaoHang" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="NguonDB" Type="Int32" />
+    <NavigationProperty Name="BaoCaoViPhams" Relationship="EAuction_EC04_003Model.FK_BaoCaoViPham_KhachHang1" FromRole="KhachHang" ToRole="BaoCaoViPham" />
+    <NavigationProperty Name="BaoCaoViPhams1" Relationship="EAuction_EC04_003Model.FK_BaoCaoViPham_KhachHang2" FromRole="KhachHang" ToRole="BaoCaoViPham" />
+    <NavigationProperty Name="ChiTietPhienDauGias" Relationship="EAuction_EC04_003Model.FK_ChiTietDauGia_KhachHang" FromRole="KhachHang" ToRole="ChiTietPhienDauGia" />
+    <NavigationProperty Name="ConNguoi" Relationship="EAuction_EC04_003Model.FK_KhachHang_ConNguoi" FromRole="KhachHang" ToRole="ConNguoi" />
+    <NavigationProperty Name="DanhSachQuanTams" Relationship="EAuction_EC04_003Model.FK_DSQuanTam_KhachHang" FromRole="KhachHang" ToRole="DanhSachQuanTam" />
+    <NavigationProperty Name="DanhSachYeuThiches" Relationship="EAuction_EC04_003Model.FK_DSYeuThich_KhachHang1" FromRole="KhachHang" ToRole="DanhSachYeuThich" />
+    <NavigationProperty Name="DanhSachYeuThiches1" Relationship="EAuction_EC04_003Model.FK_DSYeuThich_KhachHang2" FromRole="KhachHang" ToRole="DanhSachYeuThich" />
+    <NavigationProperty Name="DonHangs" Relationship="EAuction_EC04_003Model.FK_DonHang_KhachHang" FromRole="KhachHang" ToRole="DonHang" />
+    <NavigationProperty Name="ServerDB" Relationship="EAuction_EC04_003Model.FK_KhachHang_ServerDB" FromRole="KhachHang" ToRole="ServerDB" />
+    <NavigationProperty Name="SanPhams" Relationship="EAuction_EC04_003Model.FK_SanPham_KhachHang" FromRole="KhachHang" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="MoTaSanPham">
+    <Key>
+      <PropertyRef Name="IDMoTa" />
+    </Key>
+    <Property Name="IDMoTa" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MaSanPham" Type="Int32" />
+    <Property Name="MoTaTiengViet" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="MoTaTiengAnh" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="MoTaTiengTrung" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="MoTaTiengNhat" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="NguonDB" Type="Int32" />
+    <NavigationProperty Name="SanPham" Relationship="EAuction_EC04_003Model.FK_MoTa_SanPham" FromRole="MoTaSanPham" ToRole="SanPham" />
+    <NavigationProperty Name="ServerDB" Relationship="EAuction_EC04_003Model.FK_MoTa_ServerDB" FromRole="MoTaSanPham" ToRole="ServerDB" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="IDNhanVien" />
+    </Key>
+    <Property Name="IDNhanVien" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="IDConNguoi" Type="Int32" />
+    <Property Name="NgayVaoLam" Type="DateTime" Precision="3" />
+    <Property Name="BacLuong" Type="Int32" />
+    <Property Name="SoGioDaNghiPhep" Type="Int32" />
+    <Property Name="TinhTrangHoatDong" Type="Boolean" />
+    <Property Name="TenCongViec" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="NguonDB" Type="Int32" />
+    <NavigationProperty Name="BaoCaoViPhams" Relationship="EAuction_EC04_003Model.FK_BaoCaoViPham_NhanVien" FromRole="NhanVien" ToRole="BaoCaoViPham" />
+    <NavigationProperty Name="ConNguoi" Relationship="EAuction_EC04_003Model.FK_NhanVien_ConNguoi" FromRole="NhanVien" ToRole="ConNguoi" />
+    <NavigationProperty Name="ServerDB" Relationship="EAuction_EC04_003Model.FK_NhanVien_ServerDB" FromRole="NhanVien" ToRole="ServerDB" />
+    <NavigationProperty Name="SanPhams" Relationship="EAuction_EC04_003Model.FK_SanPham_NhanVien" FromRole="NhanVien" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="PhanLoaiCuaSanPham">
+    <Key>
+      <PropertyRef Name="IDPhanLoaiSP" />
+    </Key>
+    <Property Name="IDPhanLoaiSP" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MaSanPham" Type="Int32" />
+    <Property Name="MaDanhMuc" Type="Int32" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="NguonDB" Type="Int32" />
+    <NavigationProperty Name="DanhMuc" Relationship="EAuction_EC04_003Model.FK_PhanLoaiCuaSanPham_DanhMuc" FromRole="PhanLoaiCuaSanPham" ToRole="DanhMuc" />
+    <NavigationProperty Name="SanPham" Relationship="EAuction_EC04_003Model.FK_PhanLoai_SanPham" FromRole="PhanLoaiCuaSanPham" ToRole="SanPham" />
+    <NavigationProperty Name="ServerDB" Relationship="EAuction_EC04_003Model.FK_PhanLoaiCuaSanPham_ServerDB" FromRole="PhanLoaiCuaSanPham" ToRole="ServerDB" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="IDSanPham" />
+    </Key>
+    <Property Name="IDSanPham" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TenSanPham" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="KichCo" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="GiaKhoiDiem" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="GiaMuaNgay" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DiaDiemChapNhanGiaoHang" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="ThoiGianHoanThanhGiaoHang" Type="Int32" />
+    <Property Name="TinhTrang" Type="Boolean" />
+    <Property Name="ThuongHieu" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ChatLieu" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MauSac" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="DiaChiHienTaiCuaSanPham" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="MucTangGia" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MaNguoiBan" Type="Int32" />
+    <Property Name="MaNhanVienKiemDinh" Type="Int32" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayCapNhat" Type="DateTime" Precision="3" />
+    <Property Name="NguonDB" Type="Int32" />
+    <NavigationProperty Name="BaoCaoViPhams" Relationship="EAuction_EC04_003Model.FK_BaoCaoViPham_SanPham" FromRole="SanPham" ToRole="BaoCaoViPham" />
+    <NavigationProperty Name="ChiTietPhienDauGias" Relationship="EAuction_EC04_003Model.FK_ChiTietDauGia_SanPham" FromRole="SanPham" ToRole="ChiTietPhienDauGia" />
+    <NavigationProperty Name="DanhSachQuanTams" Relationship="EAuction_EC04_003Model.FK_DSQuanTam_SanPham" FromRole="SanPham" ToRole="DanhSachQuanTam" />
+    <NavigationProperty Name="DanhSachYeuThiches" Relationship="EAuction_EC04_003Model.FK_DSYeuThich_SanPham" FromRole="SanPham" ToRole="DanhSachYeuThich" />
+    <NavigationProperty Name="DonHangs" Relationship="EAuction_EC04_003Model.FK_DonHang_SanPham" FromRole="SanPham" ToRole="DonHang" />
+    <NavigationProperty Name="HinhAnhSanPhams" Relationship="EAuction_EC04_003Model.FK_HinhAnh_SanPham" FromRole="SanPham" ToRole="HinhAnhSanPham" />
+    <NavigationProperty Name="KhachHang" Relationship="EAuction_EC04_003Model.FK_SanPham_KhachHang" FromRole="SanPham" ToRole="KhachHang" />
+    <NavigationProperty Name="MoTaSanPhams" Relationship="EAuction_EC04_003Model.FK_MoTa_SanPham" FromRole="SanPham" ToRole="MoTaSanPham" />
+    <NavigationProperty Name="NhanVien" Relationship="EAuction_EC04_003Model.FK_SanPham_NhanVien" FromRole="SanPham" ToRole="NhanVien" />
+    <NavigationProperty Name="PhanLoaiCuaSanPhams" Relationship="EAuction_EC04_003Model.FK_PhanLoai_SanPham" FromRole="SanPham" ToRole="PhanLoaiCuaSanPham" />
+    <NavigationProperty Name="ServerDB" Relationship="EAuction_EC04_003Model.FK_SanPham_ServerDB" FromRole="SanPham" ToRole="ServerDB" />
+  </EntityType>
+  <EntityType Name="ServerDB">
+    <Key>
+      <PropertyRef Name="IDServer" />
+    </Key>
+    <Property Name="IDServer" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TenServer" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="BaoCaoViPhams" Relationship="EAuction_EC04_003Model.FK_BaoCaoViPham_ServerDB" FromRole="ServerDB" ToRole="BaoCaoViPham" />
+    <NavigationProperty Name="ChiTietPhienDauGias" Relationship="EAuction_EC04_003Model.FK_ChiTietDauGia_ServerDB" FromRole="ServerDB" ToRole="ChiTietPhienDauGia" />
+    <NavigationProperty Name="ConNguois" Relationship="EAuction_EC04_003Model.FK_ConNguoi_ServerDB" FromRole="ServerDB" ToRole="ConNguoi" />
+    <NavigationProperty Name="DanhMucs" Relationship="EAuction_EC04_003Model.FK_DanhMuc_ServerDB" FromRole="ServerDB" ToRole="DanhMuc" />
+    <NavigationProperty Name="DanhSachQuanTams" Relationship="EAuction_EC04_003Model.FK_DSQuanTam_ServerDB" FromRole="ServerDB" ToRole="DanhSachQuanTam" />
+    <NavigationProperty Name="DanhSachYeuThiches" Relationship="EAuction_EC04_003Model.FK_DSYeuThich_ServerDB" FromRole="ServerDB" ToRole="DanhSachYeuThich" />
+    <NavigationProperty Name="DonHangs" Relationship="EAuction_EC04_003Model.FK_DonHang_ServerDB" FromRole="ServerDB" ToRole="DonHang" />
+    <NavigationProperty Name="HinhAnhSanPhams" Relationship="EAuction_EC04_003Model.FK_HinhAnh_ServerDB" FromRole="ServerDB" ToRole="HinhAnhSanPham" />
+    <NavigationProperty Name="KhachHangs" Relationship="EAuction_EC04_003Model.FK_KhachHang_ServerDB" FromRole="ServerDB" ToRole="KhachHang" />
+    <NavigationProperty Name="MoTaSanPhams" Relationship="EAuction_EC04_003Model.FK_MoTa_ServerDB" FromRole="ServerDB" ToRole="MoTaSanPham" />
+    <NavigationProperty Name="NhanViens" Relationship="EAuction_EC04_003Model.FK_NhanVien_ServerDB" FromRole="ServerDB" ToRole="NhanVien" />
+    <NavigationProperty Name="PhanLoaiCuaSanPhams" Relationship="EAuction_EC04_003Model.FK_PhanLoaiCuaSanPham_ServerDB" FromRole="ServerDB" ToRole="PhanLoaiCuaSanPham" />
+    <NavigationProperty Name="SanPhams" Relationship="EAuction_EC04_003Model.FK_SanPham_ServerDB" FromRole="ServerDB" ToRole="SanPham" />
+  </EntityType>
+  <Association Name="FK_BaoCaoViPham_KhachHang1">
+    <End Role="KhachHang" Type="EAuction_EC04_003Model.KhachHang" Multiplicity="0..1" />
+    <End Role="BaoCaoViPham" Type="EAuction_EC04_003Model.BaoCaoViPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="IDKhachHang" />
+      </Principal>
+      <Dependent Role="BaoCaoViPham">
+        <PropertyRef Name="MaNguoiBaoCao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaoCaoViPham_KhachHang2">
+    <End Role="KhachHang" Type="EAuction_EC04_003Model.KhachHang" Multiplicity="0..1" />
+    <End Role="BaoCaoViPham" Type="EAuction_EC04_003Model.BaoCaoViPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="IDKhachHang" />
+      </Principal>
+      <Dependent Role="BaoCaoViPham">
+        <PropertyRef Name="MaNguoiBiBaoCao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaoCaoViPham_NhanVien">
+    <End Role="NhanVien" Type="EAuction_EC04_003Model.NhanVien" Multiplicity="0..1" />
+    <End Role="BaoCaoViPham" Type="EAuction_EC04_003Model.BaoCaoViPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="IDNhanVien" />
+      </Principal>
+      <Dependent Role="BaoCaoViPham">
+        <PropertyRef Name="MaNhanVienDuyet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaoCaoViPham_SanPham">
+    <End Role="SanPham" Type="EAuction_EC04_003Model.SanPham" Multiplicity="0..1" />
+    <End Role="BaoCaoViPham" Type="EAuction_EC04_003Model.BaoCaoViPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="IDSanPham" />
+      </Principal>
+      <Dependent Role="BaoCaoViPham">
+        <PropertyRef Name="MaSanPhamBiBaoCao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaoCaoViPham_ServerDB">
+    <End Role="ServerDB" Type="EAuction_EC04_003Model.ServerDB" Multiplicity="0..1" />
+    <End Role="BaoCaoViPham" Type="EAuction_EC04_003Model.BaoCaoViPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServerDB">
+        <PropertyRef Name="IDServer" />
+      </Principal>
+      <Dependent Role="BaoCaoViPham">
+        <PropertyRef Name="NguonDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietDauGia_KhachHang">
+    <End Role="KhachHang" Type="EAuction_EC04_003Model.KhachHang" Multiplicity="0..1" />
+    <End Role="ChiTietPhienDauGia" Type="EAuction_EC04_003Model.ChiTietPhienDauGia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="IDKhachHang" />
+      </Principal>
+      <Dependent Role="ChiTietPhienDauGia">
+        <PropertyRef Name="MaKhachHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietDauGia_SanPham">
+    <End Role="SanPham" Type="EAuction_EC04_003Model.SanPham" Multiplicity="0..1" />
+    <End Role="ChiTietPhienDauGia" Type="EAuction_EC04_003Model.ChiTietPhienDauGia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="IDSanPham" />
+      </Principal>
+      <Dependent Role="ChiTietPhienDauGia">
+        <PropertyRef Name="MaSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietDauGia_ServerDB">
+    <End Role="ServerDB" Type="EAuction_EC04_003Model.ServerDB" Multiplicity="0..1" />
+    <End Role="ChiTietPhienDauGia" Type="EAuction_EC04_003Model.ChiTietPhienDauGia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServerDB">
+        <PropertyRef Name="IDServer" />
+      </Principal>
+      <Dependent Role="ChiTietPhienDauGia">
+        <PropertyRef Name="NguonDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSQuanTam_CTPhienDauGia">
+    <End Role="ChiTietPhienDauGia" Type="EAuction_EC04_003Model.ChiTietPhienDauGia" Multiplicity="0..1" />
+    <End Role="DanhSachQuanTam" Type="EAuction_EC04_003Model.DanhSachQuanTam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChiTietPhienDauGia">
+        <PropertyRef Name="IDCTPhienDauGia" />
+      </Principal>
+      <Dependent Role="DanhSachQuanTam">
+        <PropertyRef Name="MaPhienDauGia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConNguoi_ServerDB">
+    <End Role="ServerDB" Type="EAuction_EC04_003Model.ServerDB" Multiplicity="0..1" />
+    <End Role="ConNguoi" Type="EAuction_EC04_003Model.ConNguoi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServerDB">
+        <PropertyRef Name="IDServer" />
+      </Principal>
+      <Dependent Role="ConNguoi">
+        <PropertyRef Name="NguonDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KhachHang_ConNguoi">
+    <End Role="ConNguoi" Type="EAuction_EC04_003Model.ConNguoi" Multiplicity="0..1" />
+    <End Role="KhachHang" Type="EAuction_EC04_003Model.KhachHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConNguoi">
+        <PropertyRef Name="IDConNguoi" />
+      </Principal>
+      <Dependent Role="KhachHang">
+        <PropertyRef Name="IDConNguoi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhanVien_ConNguoi">
+    <End Role="ConNguoi" Type="EAuction_EC04_003Model.ConNguoi" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="EAuction_EC04_003Model.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConNguoi">
+        <PropertyRef Name="IDConNguoi" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="IDConNguoi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DanhMuc_ServerDB">
+    <End Role="ServerDB" Type="EAuction_EC04_003Model.ServerDB" Multiplicity="0..1" />
+    <End Role="DanhMuc" Type="EAuction_EC04_003Model.DanhMuc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServerDB">
+        <PropertyRef Name="IDServer" />
+      </Principal>
+      <Dependent Role="DanhMuc">
+        <PropertyRef Name="NguonDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhanLoaiCuaSanPham_DanhMuc">
+    <End Role="DanhMuc" Type="EAuction_EC04_003Model.DanhMuc" Multiplicity="0..1" />
+    <End Role="PhanLoaiCuaSanPham" Type="EAuction_EC04_003Model.PhanLoaiCuaSanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMuc">
+        <PropertyRef Name="IDDanhMuc" />
+      </Principal>
+      <Dependent Role="PhanLoaiCuaSanPham">
+        <PropertyRef Name="MaDanhMuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSQuanTam_KhachHang">
+    <End Role="KhachHang" Type="EAuction_EC04_003Model.KhachHang" Multiplicity="0..1" />
+    <End Role="DanhSachQuanTam" Type="EAuction_EC04_003Model.DanhSachQuanTam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="IDKhachHang" />
+      </Principal>
+      <Dependent Role="DanhSachQuanTam">
+        <PropertyRef Name="MaKhachHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSQuanTam_SanPham">
+    <End Role="SanPham" Type="EAuction_EC04_003Model.SanPham" Multiplicity="0..1" />
+    <End Role="DanhSachQuanTam" Type="EAuction_EC04_003Model.DanhSachQuanTam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="IDSanPham" />
+      </Principal>
+      <Dependent Role="DanhSachQuanTam">
+        <PropertyRef Name="MaSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSQuanTam_ServerDB">
+    <End Role="ServerDB" Type="EAuction_EC04_003Model.ServerDB" Multiplicity="0..1" />
+    <End Role="DanhSachQuanTam" Type="EAuction_EC04_003Model.DanhSachQuanTam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServerDB">
+        <PropertyRef Name="IDServer" />
+      </Principal>
+      <Dependent Role="DanhSachQuanTam">
+        <PropertyRef Name="NguonDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSYeuThich_KhachHang1">
+    <End Role="KhachHang" Type="EAuction_EC04_003Model.KhachHang" Multiplicity="0..1" />
+    <End Role="DanhSachYeuThich" Type="EAuction_EC04_003Model.DanhSachYeuThich" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="IDKhachHang" />
+      </Principal>
+      <Dependent Role="DanhSachYeuThich">
+        <PropertyRef Name="MaKhachHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSYeuThich_KhachHang2">
+    <End Role="KhachHang" Type="EAuction_EC04_003Model.KhachHang" Multiplicity="0..1" />
+    <End Role="DanhSachYeuThich" Type="EAuction_EC04_003Model.DanhSachYeuThich" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="IDKhachHang" />
+      </Principal>
+      <Dependent Role="DanhSachYeuThich">
+        <PropertyRef Name="MaNguoiYeuThich" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSYeuThich_SanPham">
+    <End Role="SanPham" Type="EAuction_EC04_003Model.SanPham" Multiplicity="0..1" />
+    <End Role="DanhSachYeuThich" Type="EAuction_EC04_003Model.DanhSachYeuThich" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="IDSanPham" />
+      </Principal>
+      <Dependent Role="DanhSachYeuThich">
+        <PropertyRef Name="MaSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSYeuThich_ServerDB">
+    <End Role="ServerDB" Type="EAuction_EC04_003Model.ServerDB" Multiplicity="0..1" />
+    <End Role="DanhSachYeuThich" Type="EAuction_EC04_003Model.DanhSachYeuThich" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServerDB">
+        <PropertyRef Name="IDServer" />
+      </Principal>
+      <Dependent Role="DanhSachYeuThich">
+        <PropertyRef Name="NguonDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonHang_KhachHang">
+    <End Role="KhachHang" Type="EAuction_EC04_003Model.KhachHang" Multiplicity="0..1" />
+    <End Role="DonHang" Type="EAuction_EC04_003Model.DonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="IDKhachHang" />
+      </Principal>
+      <Dependent Role="DonHang">
+        <PropertyRef Name="MaKhachHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonHang_SanPham">
+    <End Role="SanPham" Type="EAuction_EC04_003Model.SanPham" Multiplicity="0..1" />
+    <End Role="DonHang" Type="EAuction_EC04_003Model.DonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="IDSanPham" />
+      </Principal>
+      <Dependent Role="DonHang">
+        <PropertyRef Name="MaSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonHang_ServerDB">
+    <End Role="ServerDB" Type="EAuction_EC04_003Model.ServerDB" Multiplicity="0..1" />
+    <End Role="DonHang" Type="EAuction_EC04_003Model.DonHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServerDB">
+        <PropertyRef Name="IDServer" />
+      </Principal>
+      <Dependent Role="DonHang">
+        <PropertyRef Name="NguonDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HinhAnh_SanPham">
+    <End Role="SanPham" Type="EAuction_EC04_003Model.SanPham" Multiplicity="0..1" />
+    <End Role="HinhAnhSanPham" Type="EAuction_EC04_003Model.HinhAnhSanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="IDSanPham" />
+      </Principal>
+      <Dependent Role="HinhAnhSanPham">
+        <PropertyRef Name="MaSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HinhAnh_ServerDB">
+    <End Role="ServerDB" Type="EAuction_EC04_003Model.ServerDB" Multiplicity="0..1" />
+    <End Role="HinhAnhSanPham" Type="EAuction_EC04_003Model.HinhAnhSanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServerDB">
+        <PropertyRef Name="IDServer" />
+      </Principal>
+      <Dependent Role="HinhAnhSanPham">
+        <PropertyRef Name="NguonDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KhachHang_ServerDB">
+    <End Role="ServerDB" Type="EAuction_EC04_003Model.ServerDB" Multiplicity="0..1" />
+    <End Role="KhachHang" Type="EAuction_EC04_003Model.KhachHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServerDB">
+        <PropertyRef Name="IDServer" />
+      </Principal>
+      <Dependent Role="KhachHang">
+        <PropertyRef Name="NguonDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SanPham_KhachHang">
+    <End Role="KhachHang" Type="EAuction_EC04_003Model.KhachHang" Multiplicity="0..1" />
+    <End Role="SanPham" Type="EAuction_EC04_003Model.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="IDKhachHang" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="MaNguoiBan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MoTa_SanPham">
+    <End Role="SanPham" Type="EAuction_EC04_003Model.SanPham" Multiplicity="0..1" />
+    <End Role="MoTaSanPham" Type="EAuction_EC04_003Model.MoTaSanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="IDSanPham" />
+      </Principal>
+      <Dependent Role="MoTaSanPham">
+        <PropertyRef Name="MaSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MoTa_ServerDB">
+    <End Role="ServerDB" Type="EAuction_EC04_003Model.ServerDB" Multiplicity="0..1" />
+    <End Role="MoTaSanPham" Type="EAuction_EC04_003Model.MoTaSanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServerDB">
+        <PropertyRef Name="IDServer" />
+      </Principal>
+      <Dependent Role="MoTaSanPham">
+        <PropertyRef Name="NguonDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhanVien_ServerDB">
+    <End Role="ServerDB" Type="EAuction_EC04_003Model.ServerDB" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="EAuction_EC04_003Model.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServerDB">
+        <PropertyRef Name="IDServer" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="NguonDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SanPham_NhanVien">
+    <End Role="NhanVien" Type="EAuction_EC04_003Model.NhanVien" Multiplicity="0..1" />
+    <End Role="SanPham" Type="EAuction_EC04_003Model.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="IDNhanVien" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="MaNhanVienKiemDinh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhanLoai_SanPham">
+    <End Role="SanPham" Type="EAuction_EC04_003Model.SanPham" Multiplicity="0..1" />
+    <End Role="PhanLoaiCuaSanPham" Type="EAuction_EC04_003Model.PhanLoaiCuaSanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="IDSanPham" />
+      </Principal>
+      <Dependent Role="PhanLoaiCuaSanPham">
+        <PropertyRef Name="MaSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhanLoaiCuaSanPham_ServerDB">
+    <End Role="ServerDB" Type="EAuction_EC04_003Model.ServerDB" Multiplicity="0..1" />
+    <End Role="PhanLoaiCuaSanPham" Type="EAuction_EC04_003Model.PhanLoaiCuaSanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServerDB">
+        <PropertyRef Name="IDServer" />
+      </Principal>
+      <Dependent Role="PhanLoaiCuaSanPham">
+        <PropertyRef Name="NguonDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SanPham_ServerDB">
+    <End Role="ServerDB" Type="EAuction_EC04_003Model.ServerDB" Multiplicity="0..1" />
+    <End Role="SanPham" Type="EAuction_EC04_003Model.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServerDB">
+        <PropertyRef Name="IDServer" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="NguonDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

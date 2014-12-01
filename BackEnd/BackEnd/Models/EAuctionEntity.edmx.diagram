@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="01146838ec9b4cb192db55634e89a41c" Name="Diagram1">
+        <EntityTypeShape EntityType="EAuction_EC04_003Model.Account" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EAuction_EC04_003Model.BaoCaoViPham" Width="1.5" PointX="3" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EAuction_EC04_003Model.ChiTietPhienDauGia" Width="1.5" PointX="6" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EAuction_EC04_003Model.ConNguoi" Width="1.5" PointX="3" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="EAuction_EC04_003Model.DanhMuc" Width="1.5" PointX="3" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EAuction_EC04_003Model.DanhMucAdmin" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EAuction_EC04_003Model.DanhSachQuanTam" Width="1.5" PointX="8.25" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EAuction_EC04_003Model.DanhSachYeuThich" Width="1.5" PointX="10.5" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EAuction_EC04_003Model.DonHang" Width="1.5" PointX="10.5" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EAuction_EC04_003Model.HinhAnhSanPham" Width="1.5" PointX="15.75" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EAuction_EC04_003Model.KhachHang" Width="1.5" PointX="5.25" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EAuction_EC04_003Model.MoTaSanPham" Width="1.5" PointX="18.75" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EAuction_EC04_003Model.NhanVien" Width="1.5" PointX="8.25" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EAuction_EC04_003Model.PhanLoaiCuaSanPham" Width="1.5" PointX="15.75" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EAuction_EC04_003Model.SanPham" Width="1.5" PointX="13.5" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EAuction_EC04_003Model.ServerDB" Width="1.5" PointX="0.75" PointY="18.875" IsExpanded="true" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_BaoCaoViPham_KhachHang1" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_BaoCaoViPham_KhachHang2" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_BaoCaoViPham_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_BaoCaoViPham_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_BaoCaoViPham_ServerDB" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_ChiTietDauGia_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_ChiTietDauGia_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_ChiTietDauGia_ServerDB" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_DSQuanTam_CTPhienDauGia" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_ConNguoi_ServerDB" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_KhachHang_ConNguoi" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_NhanVien_ConNguoi" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_DanhMuc_ServerDB" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_PhanLoaiCuaSanPham_DanhMuc" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_DSQuanTam_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_DSQuanTam_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_DSQuanTam_ServerDB" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_DSYeuThich_KhachHang1" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_DSYeuThich_KhachHang2" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_DSYeuThich_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_DSYeuThich_ServerDB" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_DonHang_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_DonHang_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_DonHang_ServerDB" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_HinhAnh_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_HinhAnh_ServerDB" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_KhachHang_ServerDB" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_SanPham_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_MoTa_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_MoTa_ServerDB" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_NhanVien_ServerDB" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_SanPham_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_PhanLoai_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_PhanLoaiCuaSanPham_ServerDB" ManuallyRouted="false" />
+        <AssociationConnector Association="EAuction_EC04_003Model.FK_SanPham_ServerDB" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

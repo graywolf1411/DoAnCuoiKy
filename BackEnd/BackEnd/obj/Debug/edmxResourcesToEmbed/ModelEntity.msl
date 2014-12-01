@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ytemoi_dataModelStoreContainer" CdmEntityContainer="ThietBiYTeEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="ytemoi_dataModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="acc" ColumnName="acc" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banners">
+      <EntityTypeMapping TypeName="ytemoi_dataModel.Banner">
+        <MappingFragment StoreEntitySet="Banner">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="oder" ColumnName="oder" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BinhLuans">
+      <EntityTypeMapping TypeName="ytemoi_dataModel.BinhLuan">
+        <MappingFragment StoreEntitySet="BinhLuan">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_sanpham" ColumnName="id_sanpham" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="data" ColumnName="data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiNhanhs">
+      <EntityTypeMapping TypeName="ytemoi_dataModel.ChiNhanh">
+        <MappingFragment StoreEntitySet="ChiNhanh">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="chinhanh1" ColumnName="chinhanh1" />
+          <ScalarProperty Name="chinhanh2" ColumnName="chinhanh2" />
+          <ScalarProperty Name="chinhanh3" ColumnName="chinhanh3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhMucs">
+      <EntityTypeMapping TypeName="ytemoi_dataModel.DanhMuc">
+        <MappingFragment StoreEntitySet="DanhMuc">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="oder" ColumnName="oder" />
+          <ScalarProperty Name="parent" ColumnName="parent" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhMucAdmins">
+      <EntityTypeMapping TypeName="ytemoi_dataModel.DanhMucAdmin">
+        <MappingFragment StoreEntitySet="DanhMucAdmin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="oder" ColumnName="oder" />
+          <ScalarProperty Name="parent" ColumnName="parent" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DefaultDatas">
+      <EntityTypeMapping TypeName="ytemoi_dataModel.DefaultData">
+        <MappingFragment StoreEntitySet="DefaultData">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GioiThieux">
+      <EntityTypeMapping TypeName="ytemoi_dataModel.GioiThieu">
+        <MappingFragment StoreEntitySet="GioiThieu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tomtat" ColumnName="tomtat" />
+          <ScalarProperty Name="noidung" ColumnName="noidung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoaDons">
+      <EntityTypeMapping TypeName="ytemoi_dataModel.HoaDon">
+        <MappingFragment StoreEntitySet="HoaDon">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoatDongs">
+      <EntityTypeMapping TypeName="ytemoi_dataModel.HoatDong">
+        <MappingFragment StoreEntitySet="HoatDong">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id_danhmuc" ColumnName="id_danhmuc" />
+          <ScalarProperty Name="img_nen" ColumnName="img_nen" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="luot_view" ColumnName="luot_view" />
+          <ScalarProperty Name="oder" ColumnName="oder" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoTroTrucTuyens">
+      <EntityTypeMapping TypeName="ytemoi_dataModel.HoTroTrucTuyen">
+        <MappingFragment StoreEntitySet="HoTroTrucTuyen">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LienHes">
+      <EntityTypeMapping TypeName="ytemoi_dataModel.LienHe">
+        <MappingFragment StoreEntitySet="LienHe">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="ytemoi_dataModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="oder" ColumnName="oder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhams">
+      <EntityTypeMapping TypeName="ytemoi_dataModel.SanPham">
+        <MappingFragment StoreEntitySet="SanPham">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id_danhmuc" ColumnName="id_danhmuc" />
+          <ScalarProperty Name="img_nen_1" ColumnName="img_nen_1" />
+          <ScalarProperty Name="img_nen_2" ColumnName="img_nen_2" />
+          <ScalarProperty Name="img_nen_3" ColumnName="img_nen_3" />
+          <ScalarProperty Name="img_nen_4" ColumnName="img_nen_4" />
+          <ScalarProperty Name="img_nen_5" ColumnName="img_nen_5" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="thongtinkythuat" ColumnName="thongtinkythuat" />
+          <ScalarProperty Name="thongtinkythuat2" ColumnName="thongtinkythuat2" />
+          <ScalarProperty Name="thongtinkythuat3" ColumnName="thongtinkythuat3" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+          <ScalarProperty Name="luot_view" ColumnName="luot_view" />
+          <ScalarProperty Name="oder" ColumnName="oder" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhamHoaDons">
+      <EntityTypeMapping TypeName="ytemoi_dataModel.SanPhamHoaDon">
+        <MappingFragment StoreEntitySet="SanPhamHoaDon">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_sanpham" ColumnName="id_sanpham" />
+          <ScalarProperty Name="id_hoadon" ColumnName="id_hoadon" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SlideShows">
+      <EntityTypeMapping TypeName="ytemoi_dataModel.SlideShow">
+        <MappingFragment StoreEntitySet="SlideShow">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="oder" ColumnName="oder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TinTucs">
+      <EntityTypeMapping TypeName="ytemoi_dataModel.TinTuc">
+        <MappingFragment StoreEntitySet="TinTuc">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id_danhmuc" ColumnName="id_danhmuc" />
+          <ScalarProperty Name="img_nen" ColumnName="img_nen" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="tomtat" ColumnName="tomtat" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="luot_view" ColumnName="luot_view" />
+          <ScalarProperty Name="oder" ColumnName="oder" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

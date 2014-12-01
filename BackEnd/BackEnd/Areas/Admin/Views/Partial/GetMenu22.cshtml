@@ -1,0 +1,23 @@
+﻿@{
+    List<BackEnd.Models.DanhMucAdmin> data = ViewBag.data as List<BackEnd.Models.DanhMucAdmin>;    
+}
+@if (data.Count > 0)
+{
+    <ul class="subNav">
+        @for (int i = 0; i < data.Count; i++)
+        {
+            if (data[i].id.Equals(ViewBag.id))
+            {
+            <li class="activeli">
+            <a href="@data[i].link" title="" class="this">
+                <span class="@data[i].icon"></span>@data[i].name</a></li>
+            }
+            else
+            {
+            <li>
+            <a href="@data[i].link" title="">
+                <span class="@data[i].icon"></span>@data[i].name</a></li>
+            }
+        }
+    </ul>
+}

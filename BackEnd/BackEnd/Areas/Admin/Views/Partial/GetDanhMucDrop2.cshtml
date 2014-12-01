@@ -1,0 +1,14 @@
+﻿@model BackEnd.Areas.Admin.Models.ListItemlModel
+@if (Model.listitem.Count() > 0)
+{
+    <div class="formRow">
+        <div class="grid3">
+            <label>
+                Chọn Danh Mục Con :</label></div>
+        <div class="grid9 noSearch">
+            @Html.DropDownListFor(x=>x.danhmuccon, Model.listitem, new { @class = "select" })
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+}

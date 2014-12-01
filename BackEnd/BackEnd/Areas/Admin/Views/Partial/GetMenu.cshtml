@@ -1,0 +1,19 @@
+﻿@{
+    List<BackEnd.Models.DanhMucAdmin> data = ViewBag.data as List<BackEnd.Models.DanhMucAdmin>;    
+}
+
+@for (int i = 0; i < data.Count; i++)
+{
+    if (data[i].id.Equals(ViewBag.id))
+    {
+        <li><a href="@data[i].link" title="" class="active"><img src="~/@data[i].icon" alt="" /><span>@data[i].name</span></a>
+            @Html.Action("GetMenu2", "Partial", new { id = ViewBag.id2, parent = data[i].id })
+        </li>
+    }
+    else
+    {
+        <li><a href="@data[i].link" title=""><img src="~/@data[i].icon" alt="" /><span>@data[i].name</span></a>
+            @Html.Action("GetMenu2", "Partial", new { id = ViewBag.id2, parent = data[i].id })
+        </li>
+    }
+}

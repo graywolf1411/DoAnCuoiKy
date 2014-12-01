@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ytemoi_dataModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ThietBiYTeEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="ytemoi_dataModel.Account" />
+    <EntitySet Name="Banners" EntityType="ytemoi_dataModel.Banner" />
+    <EntitySet Name="BinhLuans" EntityType="ytemoi_dataModel.BinhLuan" />
+    <EntitySet Name="ChiNhanhs" EntityType="ytemoi_dataModel.ChiNhanh" />
+    <EntitySet Name="DanhMucs" EntityType="ytemoi_dataModel.DanhMuc" />
+    <EntitySet Name="DanhMucAdmins" EntityType="ytemoi_dataModel.DanhMucAdmin" />
+    <EntitySet Name="DefaultDatas" EntityType="ytemoi_dataModel.DefaultData" />
+    <EntitySet Name="GioiThieux" EntityType="ytemoi_dataModel.GioiThieu" />
+    <EntitySet Name="HoaDons" EntityType="ytemoi_dataModel.HoaDon" />
+    <EntitySet Name="HoatDongs" EntityType="ytemoi_dataModel.HoatDong" />
+    <EntitySet Name="HoTroTrucTuyens" EntityType="ytemoi_dataModel.HoTroTrucTuyen" />
+    <EntitySet Name="LienHes" EntityType="ytemoi_dataModel.LienHe" />
+    <EntitySet Name="Menus" EntityType="ytemoi_dataModel.Menu" />
+    <EntitySet Name="SanPhams" EntityType="ytemoi_dataModel.SanPham" />
+    <EntitySet Name="SanPhamHoaDons" EntityType="ytemoi_dataModel.SanPhamHoaDon" />
+    <EntitySet Name="SlideShows" EntityType="ytemoi_dataModel.SlideShow" />
+    <EntitySet Name="TinTucs" EntityType="ytemoi_dataModel.TinTuc" />
+    <AssociationSet Name="FK__BinhLuan__id_san__1ED998B2" Association="ytemoi_dataModel.FK__BinhLuan__id_san__1ED998B2">
+      <End Role="SanPham" EntitySet="SanPhams" />
+      <End Role="BinhLuan" EntitySet="BinhLuans" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HoatDong__id_dan__300424B4" Association="ytemoi_dataModel.FK__HoatDong__id_dan__300424B4">
+      <End Role="DanhMuc" EntitySet="DanhMucs" />
+      <End Role="HoatDong" EntitySet="HoatDongs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SanPham__id_danh__173876EA" Association="ytemoi_dataModel.FK__SanPham__id_danh__173876EA">
+      <End Role="DanhMuc" EntitySet="DanhMucs" />
+      <End Role="SanPham" EntitySet="SanPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TinTuc__id_danhm__29572725" Association="ytemoi_dataModel.FK__TinTuc__id_danhm__29572725">
+      <End Role="DanhMuc" EntitySet="DanhMucs" />
+      <End Role="TinTuc" EntitySet="TinTucs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SanPhamHo__id_ho__47DBAE45" Association="ytemoi_dataModel.FK__SanPhamHo__id_ho__47DBAE45">
+      <End Role="HoaDon" EntitySet="HoaDons" />
+      <End Role="SanPhamHoaDon" EntitySet="SanPhamHoaDons" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="acc" />
+    </Key>
+    <Property Name="acc" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="pass" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="email" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Banner">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="img" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="link" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="oder" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BinhLuan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="id_sanpham" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="data" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SanPham" Relationship="ytemoi_dataModel.FK__BinhLuan__id_san__1ED998B2" FromRole="BinhLuan" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="ChiNhanh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="chinhanh1" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="chinhanh2" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="chinhanh3" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="DanhMuc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="link" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="oder" Type="Int32" Nullable="false" />
+    <Property Name="parent" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="HoatDongs" Relationship="ytemoi_dataModel.FK__HoatDong__id_dan__300424B4" FromRole="DanhMuc" ToRole="HoatDong" />
+    <NavigationProperty Name="SanPhams" Relationship="ytemoi_dataModel.FK__SanPham__id_danh__173876EA" FromRole="DanhMuc" ToRole="SanPham" />
+    <NavigationProperty Name="TinTucs" Relationship="ytemoi_dataModel.FK__TinTuc__id_danhm__29572725" FromRole="DanhMuc" ToRole="TinTuc" />
+  </EntityType>
+  <EntityType Name="DanhMucAdmin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="link" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="oder" Type="Int32" Nullable="false" />
+    <Property Name="parent" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="icon" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DefaultData">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="value" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="GioiThieu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="tomtat" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="noidung" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="address" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="phone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="email" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="SanPhamHoaDons" Relationship="ytemoi_dataModel.FK__SanPhamHo__id_ho__47DBAE45" FromRole="HoaDon" ToRole="SanPhamHoaDon" />
+  </EntityType>
+  <EntityType Name="HoatDong">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="id_danhmuc" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="img_nen" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="data" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="luot_view" Type="Int32" Nullable="false" />
+    <Property Name="oder" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DanhMuc" Relationship="ytemoi_dataModel.FK__HoatDong__id_dan__300424B4" FromRole="HoatDong" ToRole="DanhMuc" />
+  </EntityType>
+  <EntityType Name="HoTroTrucTuyen">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="link" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LienHe">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="email" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="sdt" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="data" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="link" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="oder" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="id_danhmuc" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="img_nen_1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="img_nen_2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="img_nen_3" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="img_nen_4" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="img_nen_5" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="mota" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="thongtinkythuat" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="thongtinkythuat2" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="thongtinkythuat3" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="gia" Type="Double" Nullable="false" />
+    <Property Name="luot_view" Type="Int32" Nullable="false" />
+    <Property Name="oder" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BinhLuans" Relationship="ytemoi_dataModel.FK__BinhLuan__id_san__1ED998B2" FromRole="SanPham" ToRole="BinhLuan" />
+    <NavigationProperty Name="DanhMuc" Relationship="ytemoi_dataModel.FK__SanPham__id_danh__173876EA" FromRole="SanPham" ToRole="DanhMuc" />
+  </EntityType>
+  <EntityType Name="SanPhamHoaDon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="id_sanpham" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="id_hoadon" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="soluong" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="HoaDon" Relationship="ytemoi_dataModel.FK__SanPhamHo__id_ho__47DBAE45" FromRole="SanPhamHoaDon" ToRole="HoaDon" />
+  </EntityType>
+  <EntityType Name="SlideShow">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="img" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="link" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="oder" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TinTuc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="id_danhmuc" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="img_nen" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="tomtat" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="mota" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="luot_view" Type="Int32" Nullable="false" />
+    <Property Name="oder" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DanhMuc" Relationship="ytemoi_dataModel.FK__TinTuc__id_danhm__29572725" FromRole="TinTuc" ToRole="DanhMuc" />
+  </EntityType>
+  <Association Name="FK__BinhLuan__id_san__1ED998B2">
+    <End Role="SanPham" Type="ytemoi_dataModel.SanPham" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BinhLuan" Type="ytemoi_dataModel.BinhLuan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="BinhLuan">
+        <PropertyRef Name="id_sanpham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HoatDong__id_dan__300424B4">
+    <End Role="DanhMuc" Type="ytemoi_dataModel.DanhMuc" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HoatDong" Type="ytemoi_dataModel.HoatDong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMuc">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="HoatDong">
+        <PropertyRef Name="id_danhmuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SanPham__id_danh__173876EA">
+    <End Role="DanhMuc" Type="ytemoi_dataModel.DanhMuc" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SanPham" Type="ytemoi_dataModel.SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMuc">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="id_danhmuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TinTuc__id_danhm__29572725">
+    <End Role="DanhMuc" Type="ytemoi_dataModel.DanhMuc" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TinTuc" Type="ytemoi_dataModel.TinTuc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMuc">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TinTuc">
+        <PropertyRef Name="id_danhmuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SanPhamHo__id_ho__47DBAE45">
+    <End Role="HoaDon" Type="ytemoi_dataModel.HoaDon" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SanPhamHoaDon" Type="ytemoi_dataModel.SanPhamHoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SanPhamHoaDon">
+        <PropertyRef Name="id_hoadon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

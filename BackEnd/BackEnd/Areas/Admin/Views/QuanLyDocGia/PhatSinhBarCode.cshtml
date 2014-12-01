@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "PhatSinhBarCode";
+}
+
+<h2>Phát sinh barcode</h2> <br/>
+
+@using (Html.BeginForm("GenerateBarcode", "QuanLyDocGia", FormMethod.Post))
+{
+    <fieldset>      
+        <p>Nhập mã độc giả để phát sinh Barcode: </p>
+        <div>
+            @Html.TextBox("MaDocGia")
+        </div>
+        <p>
+            <input type="submit" value="Phát sinh" />
+        </p>
+    </fieldset>
+}

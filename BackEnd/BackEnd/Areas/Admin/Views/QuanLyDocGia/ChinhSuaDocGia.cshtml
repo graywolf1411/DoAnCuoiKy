@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Chỉnh sửa độc giả";
+}
+
+
+<h2>@ViewBag.Title</h2> <br />
+
+@using (Html.BeginForm("TimDocGia","QuanLyDocGia",FormMethod.Post)) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>      
+                 <label>Tìm theo:</label>
+                 <div>
+                     @Html.DropDownList("Tim", new SelectList(
+                         new List<Object>{ 
+                             new { value = 0 , text = "Mã độc giả"  },
+                             new { value = 1 , text = "Tên độc giả" },
+                             },
+                         "value",
+                         "text",
+                         0), new { style = "width: 250px;" })                     
+                 </div> <br />
+
+        <table>
+            <tr>
+                <td>
+                    <label>
+                        Từ khóa:
+                    </label>
+                    <div>
+                        @Html.TextBox("TuKhoa","", new { style = "width: 250px;" })                      
+                    </div>
+                </td>
+                    
+                <td>
+                     <div> <br />
+                        <input type="submit" value="Tìm kiếm" style="width: 100px" />
+                    </div>                 
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+}

@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "Thay Đổi Mật Khẩu";
+    ViewBag.id_menu1 = "";
+    ViewBag.id_menu2 = "";
+        
+}
+@model BackEnd.Areas.Admin.Models.ChangePassAccountModel
+@using (Html.BeginForm("ChangePass", "Account", FormMethod.Post))
+{
+    <div class="widget">
+        <div class="whead">
+            <h6>
+                Thay Đổi Mật Khẩu</h6>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="formRow">
+            <div class="grid3" style="height: auto; color: Red;">
+                @Html.ValidationSummary()
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="formRow">
+            <div class="grid3">
+                <label>
+                    Tên tài khoản:<span class="req">*</span></label></div>
+            <div class="grid9">
+
+                @Html.TextBoxFor(x => x.acc, new { @readonly="readonly" })</div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="formRow">
+            <div class="grid3">
+                <label>
+                    Mật Khẩu Mới:<span class="req">*</span></label></div>
+            <div class="grid9">
+
+                @Html.TextBoxFor(x => x.pass)</div>
+            <div class="clear">
+            </div>
+        </div>
+         <div class="formRow">
+            <div class="grid3">
+                <label>
+                   Nhập Lại Mật Khẩu Mới:<span class="req">*</span></label></div>
+            <div class="grid9">
+
+                @Html.TextBoxFor(x => x.pass2)</div>
+            <div class="clear">
+            </div>
+        </div>
+         <div class="formRow">
+            <div class="grid3">
+                <label>
+                    Email:<span class="req">*</span></label></div>
+            <div class="grid9">
+
+                @Html.TextBoxFor(x => x.email)</div>
+            <div class="clear">
+            </div>
+        </div>
+         <div class="formRow">
+            <div class="grid3">
+                <label>
+                   Nhập Mật Khẩu Cũ:<span class="req">*</span></label></div>
+            <div class="grid9">
+
+                @Html.TextBoxFor(x => x.passcuren)</div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="formRow">
+            <input type="submit" value="Submit" class="buttonM bBlack formSubmit" /><div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div> 
+}

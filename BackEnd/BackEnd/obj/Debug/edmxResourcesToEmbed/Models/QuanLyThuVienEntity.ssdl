@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLyThuVienModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="QuanLyThuVienModelStoreContainer">
+    <EntitySet Name="Account" EntityType="QuanLyThuVienModel.Store.Account" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Barcode_Of_Reader_Card" EntityType="QuanLyThuVienModel.Store.Barcode_Of_Reader_Card" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DanhMucAdmin" EntityType="QuanLyThuVienModel.Store.DanhMucAdmin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DocGia" EntityType="QuanLyThuVienModel.Store.DocGia" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sach" EntityType="QuanLyThuVienModel.Store.Sach" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ThongTinMuonSach" EntityType="QuanLyThuVienModel.Store.ThongTinMuonSach" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="YKienDocGia" EntityType="QuanLyThuVienModel.Store.YKienDocGia" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="fk_Barcode_Of_Reader_Card_DocGia" Association="QuanLyThuVienModel.Store.fk_Barcode_Of_Reader_Card_DocGia">
+      <End Role="DocGia" EntitySet="DocGia" />
+      <End Role="Barcode_Of_Reader_Card" EntitySet="Barcode_Of_Reader_Card" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ThongTinMuonSach_DocGia" Association="QuanLyThuVienModel.Store.fk_ThongTinMuonSach_DocGia">
+      <End Role="DocGia" EntitySet="DocGia" />
+      <End Role="ThongTinMuonSach" EntitySet="ThongTinMuonSach" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ThongTinMuonSach_Sach" Association="QuanLyThuVienModel.Store.fk_ThongTinMuonSach_Sach">
+      <End Role="Sach" EntitySet="Sach" />
+      <End Role="ThongTinMuonSach" EntitySet="ThongTinMuonSach" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="acc" />
+    </Key>
+    <Property Name="acc" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="pass" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="email" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Barcode_Of_Reader_Card">
+    <Key>
+      <PropertyRef Name="MaDocGia" />
+    </Key>
+    <Property Name="MaDocGia" Type="char" Nullable="false" MaxLength="13" />
+    <Property Name="BarcodeName" Type="char" Nullable="false" MaxLength="13" />
+    <Property Name="BarcodePath" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="DanhMucAdmin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="link" Type="nvarchar" MaxLength="255" />
+    <Property Name="oder" Type="int" Nullable="false" />
+    <Property Name="parent" Type="nvarchar" MaxLength="255" />
+    <Property Name="icon" Type="nvarchar" MaxLength="255" />
+    <Property Name="type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocGia">
+    <Key>
+      <PropertyRef Name="MaSoDocGia" />
+    </Key>
+    <Property Name="MaSoDocGia" Type="char" Nullable="false" MaxLength="13" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="3" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+    <Property Name="DienThoai" Type="char" MaxLength="13" />
+    <Property Name="TinhTP" Type="nvarchar" MaxLength="50" />
+    <Property Name="QuocGia" Type="nvarchar" MaxLength="50" />
+    <Property Name="KhoaLopDonVi" Type="nvarchar" MaxLength="100" />
+    <Property Name="Nhom" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="NgayTheHetHan" Type="date" />
+    <Property Name="TrangThaiThe" Type="nvarchar" MaxLength="20" />
+    <Property Name="CMND" Type="char" MaxLength="13" />
+    <Property Name="SoMaVach" Type="char" MaxLength="13" />
+    <Property Name="MaSoThe" Type="char" MaxLength="13" />
+    <Property Name="TenDangNhap" Type="varchar" MaxLength="50" />
+    <Property Name="MatKhau" Type="varchar" MaxLength="50" />
+    <Property Name="GhiChu" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Sach">
+    <Key>
+      <PropertyRef Name="SoDangKyCaBiet" />
+    </Key>
+    <Property Name="SoDangKyCaBiet" Type="int" Nullable="false" />
+    <Property Name="NhanDe" Type="nvarchar" MaxLength="50" />
+    <Property Name="NhaXuatBan" Type="nvarchar" MaxLength="50" />
+    <Property Name="TacGia" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gia" Type="money" />
+  </EntityType>
+  <EntityType Name="ThongTinMuonSach">
+    <Key>
+      <PropertyRef Name="MaDocGia" />
+      <PropertyRef Name="SoDangKyCaBiet" />
+    </Key>
+    <Property Name="MaDocGia" Type="char" Nullable="false" MaxLength="13" />
+    <Property Name="SoDangKyCaBiet" Type="int" Nullable="false" />
+    <Property Name="NgayMuon" Type="date" />
+    <Property Name="NgayTra" Type="date" />
+  </EntityType>
+  <EntityType Name="YKienDocGia">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="NgayGui" Type="date" />
+    <Property Name="TieuDe" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="NoiDung" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="KyDanh" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <Association Name="fk_Barcode_Of_Reader_Card_DocGia">
+    <End Role="DocGia" Type="QuanLyThuVienModel.Store.DocGia" Multiplicity="1" />
+    <End Role="Barcode_Of_Reader_Card" Type="QuanLyThuVienModel.Store.Barcode_Of_Reader_Card" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DocGia">
+        <PropertyRef Name="MaSoDocGia" />
+      </Principal>
+      <Dependent Role="Barcode_Of_Reader_Card">
+        <PropertyRef Name="MaDocGia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ThongTinMuonSach_DocGia">
+    <End Role="DocGia" Type="QuanLyThuVienModel.Store.DocGia" Multiplicity="1" />
+    <End Role="ThongTinMuonSach" Type="QuanLyThuVienModel.Store.ThongTinMuonSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocGia">
+        <PropertyRef Name="MaSoDocGia" />
+      </Principal>
+      <Dependent Role="ThongTinMuonSach">
+        <PropertyRef Name="MaDocGia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ThongTinMuonSach_Sach">
+    <End Role="Sach" Type="QuanLyThuVienModel.Store.Sach" Multiplicity="1" />
+    <End Role="ThongTinMuonSach" Type="QuanLyThuVienModel.Store.ThongTinMuonSach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sach">
+        <PropertyRef Name="SoDangKyCaBiet" />
+      </Principal>
+      <Dependent Role="ThongTinMuonSach">
+        <PropertyRef Name="SoDangKyCaBiet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

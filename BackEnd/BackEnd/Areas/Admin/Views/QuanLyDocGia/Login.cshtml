@@ -1,0 +1,52 @@
+﻿@model MvcApplication.Models.DocGia
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1><span style="color:#a9a9a9;"><samp><span style="background-color:lightgray;"><span style="font-size:48px;"><b>THƯ VIỆN ĐIỆN TỬ</b></span></span></samp></span></h1>
+                <h4><span style="color:#a9a9a9;">@ViewBag.Message</span></h4>
+                <h1>  </h1>
+            </hgroup>            
+        </div>
+    </section>
+}
+
+
+<h2 style="text-align:center">Đăng nhập</h2>
+@using(Html.BeginForm("Login","Home",FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    if (@ViewBag != null)
+    {
+        <div style="border:1px solid red">
+            @ViewBag.Message
+        </div>
+    }
+    <table>
+        <tr>
+            <td>Tên đăng nhập</td>
+            <td>@Html.TextBoxFor(a=>a.TenDangNhap)</td>  
+            <td>@Html.ValidationMessageFor(a=>a.TenDangNhap)</td>          
+        </tr>
+        <tr>
+            <td>Mật khẩu</td>
+            <td>@Html.PasswordFor(a=>a.MatKhau)</td>
+            <td>@Html.ValidationMessageFor(a=>a.MatKhau)</td>
+        </tr>  
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Đăng nhập" /></td>
+            <td></td>
+        </tr>      
+    </table>
+}
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,30 @@
+﻿@model Hoan_BarcodeReader.Models.BarCode_Of_Reader_Card
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<h2>Generate Barcode Of Reader Card</h2>
+@using (Html.BeginForm("GenerateBarcode", "Home"))
+{
+    <fieldset>
+        <p>
+            Input MSSV to generate barcode:<br>
+        </p>        
+        <label>MSSV: </label>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MSSV)
+            @Html.ValidationMessageFor(model => model.MSSV)
+        </div>
+        <p>
+            <input type="submit" value="Generate Barcode" />
+        </p>
+    </fieldset>
+}

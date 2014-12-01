@@ -1,0 +1,17 @@
+﻿#dialog_nen
+{	
+	background-color: rgba(51,43,46,0.7);
+	display: none; 
+}
+
+ #dialog
+{
+	display: none;
+}
+
+.hehe 
+{
+  background-color: #FFFFCC;
+  width:440px;
+  height:1000px;
+}

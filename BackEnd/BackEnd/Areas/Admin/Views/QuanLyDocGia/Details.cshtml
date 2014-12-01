@@ -1,0 +1,238 @@
+﻿@model BackEnd.Models.DocGia
+
+@{
+    ViewBag.Title = "Chi tiết độc giả";
+    <link rel="stylesheet" href="~/Content/jquery-ui.css">
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $("#datepicker").datepicker();
+        });
+        $(function () {
+            $("#datepicker1").datepicker();
+        });
+    </script>
+
+    <style type="text/css">.padl{padding-right:50px} </style>
+}
+
+
+<h2>@ViewBag.Title</h2><br/>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <table>
+            <tr>
+                <td class="padl">
+                    <div>Họ và tên:</div> 
+                     <div>
+                        @Html.TextBoxFor(model => model.HoTen, new { disabled="disabled", style = "width: 250px;" })
+                    </div>
+                </td>
+                
+                <td>
+                    <div>
+                        Giới tính:
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.GioiTinh, new { disabled="disabled", style = "width: 173px;" })
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td class="padl">
+                    <div>
+                        Địa chỉ:
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.DiaChi, new { disabled="disabled", style = "width: 250px;" })
+                  
+                    </div>
+                </td>
+                    
+                <td>
+                    <div>
+                        Ngày sinh:
+                       </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.NgaySinh, new { disabled="disabled", id = "datepicker" })
+                       
+                    </div>                  
+                </td>
+            </tr>
+        </table>
+
+
+
+        <div>
+            Điện thoại:
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.DienThoai, new { disabled = "disabled" })
+           
+        </div>
+
+        <div>
+            Tỉnh/thành phố:
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.TinhTP, new { disabled = "disabled" })
+          
+        </div>
+
+        <div>
+            Quốc gia:
+        </div>
+        <div>
+            @Html.TextBoxFor(model => model.QuocGia, new { disabled = "disabled" })
+           
+        </div>
+
+        <table>
+            <tr>
+                <td class="padl">
+                    <div>
+                        Khoa/Lớp/Đơn vị:
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.KhoaLopDonVi, new { disabled = "disabled", style = "width: 250px;" })
+                       
+                    </div>
+                </td>
+                    
+                <td>
+                    <div>
+                        Nhóm: 
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.Nhom, new { disabled = "disabled", style = "width: 173px;" })
+                      
+                    </div>                
+                </td>
+            </tr>
+        </table>
+
+        
+        <table>
+            <tr>
+                <td class="padl">
+                    <div>
+                        Email:
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.Email, new { disabled = "disabled", style = "width: 250px;" })
+                 
+                    </div>
+                </td>
+                    
+                <td>
+                    <div>
+                        Trạng thái thẻ:
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.TrangThaiThe, new { disabled = "disabled", style = "width: 173px;" })
+                  
+                    </div>               
+                </td>
+            </tr>
+        </table>
+        
+         <table>
+            <tr>
+                <td class="padl">
+                    <div>
+                        CMND:
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.CMND, new { disabled = "disabled", style = "width: 250px;" })
+            
+                    </div> 
+                    
+                </td>
+                    
+                <td>
+                    <div>
+                        Ngày thẻ hết hạn:
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.NgayTheHetHan, new { disabled = "disabled"})
+                   
+                    </div>            
+                </td>
+            </tr>
+        </table>
+     
+        <table>
+            <tr>
+                <td class="padl">
+                    <div>
+                        Số mã vạch:
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.SoMaVach, new { disabled = "disabled", style = "width: 250px;" })
+                    
+                    </div>
+                </td>
+                    
+                <td>
+                    <div>
+                        Tên đăng nhập:
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.TenDangNhap, new { disabled = "disabled"})
+                 
+                    </div>             
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td class="padl">
+                    <div>
+                        Mã số thẻ:
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.MaSoThe, new { disabled = "disabled", style = "width: 250px;" })
+                 
+                    </div>
+                </td>
+                    
+                <td>
+                    <div>
+                        Mật khẩu:
+                    </div>
+                    <div>
+                        @Html.TextBoxFor(model => model.MatKhau, new { disabled = "disabled" })
+                   
+                    </div>             
+                </td>
+            </tr>
+        </table>
+
+        <div>
+            Ghi chú:
+        </div>
+        <div>
+            @Html.TextAreaFor(model => model.GhiChu, new { disabled = "disabled", @cols = 70, @rows = 10 })
+    
+        </div>
+
+    </fieldset>
+}
+<br/>
+<div>
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id=int.Parse(Model.MaSoDocGia) }) |
+    @Html.ActionLink("Quay lại", "ChinhSuaDocGia", "QuanLyDocGia")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
